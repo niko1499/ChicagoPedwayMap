@@ -1,0 +1,314 @@
+/* Updated: 2/17/2024 */
+
+
+/* type faces */
+
+@font-face {
+    font-family: "Libre Franklin";
+    src: url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap');
+}
+
+@font-face {
+    font-family: "Bison";
+    src: url('Bison.ttf');
+}
+
+
+/* header & top navigation bar */
+
+header {
+    text-align: center;
+    color: white;
+    font-size: 300%;
+    background-color: #302665;
+    border-color: #302665;
+    padding: 2.5%;
+    padding-bottom: 0%;
+    font-family: "Bison";
+    margin: 0%;
+    height: min-content;
+}
+
+
+/* top navigation bar */
+
+.topnav {
+    text-align: center;
+    background-color: black;
+    width: 100%;
+    font-family: Bison;
+    letter-spacing: 1px;
+    display: inline-block;
+    border-style: solid;
+    border-color: white;
+    border-width: 2 px;
+    border-left: none;
+    background-color: #302665;
+}
+
+.topnav a,
+.dropdown {
+    display: inline-block;
+    color: white;
+    position: relative;
+    background-color: #000000;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 5px 20px;
+    width: max-content;
+}
+
+.ddcontent {
+    display: none;
+    margin-top: 5px;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    padding: 0px;
+    width: min-content;
+    background-color: transparent;
+    /*#339989;*/
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.168)
+}
+
+.ddcontent a {
+    display: inline-block;
+    color: white;
+    position: relative;
+    background-color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 0px 17.5px;
+    width: 100%;
+}
+
+
+/* change color on hover */
+
+.topnav a:hover,
+.ddcontent a:hover {
+    background-color: #7DE2D1;
+    color: white;
+}
+
+.topnav a.active,
+#active {
+    background-color: white;
+    color: black;
+}
+
+.dropdown:hover .ddcontent {
+    display: block;
+}
+
+
+/***************************************************/
+
+
+/****** columns *******/
+
+.left {
+    width: 45%;
+    float: left;
+    padding: 5% 1% 0% 4%
+}
+
+.right {
+    width: 45%;
+    padding: 5% 4% 0% 1%;
+    float: right
+}
+
+
+/****** change display layout on small screens *******/
+
+@media screen and (max-width: 900px) {
+    content,
+    .left,
+    .right {
+        width: 90%;
+        display: block;
+        margin: 4%;
+    }
+    img {
+        float: none;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Footer position: absolute;*/
+
+footer {
+    font-family: 'bison';
+    font-size: 9pt;
+    font-style: light;
+    font-weight: 100;
+    margin-top: 5%;
+    padding: 1%;
+    display: block;
+    text-align: center;
+    bottom: 0;
+    float: inline-end;
+    width: 100%;
+    background-color: #302665;
+    color: white;
+}
+
+.links a {
+    color: white;
+    letter-spacing: 0.5px;
+    padding: 0% 1% 0% 1%;
+}
+
+.links a:hover {
+    color: #d0f6f0
+}
+
+.topbutton {
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+}
+
+body {
+    font-family: franklin-gothic-atf, sans-serif;
+    background: white;
+    color: #000000;
+    font-size: 14px;
+    margin: 0%;
+    display: block;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+iframe {
+    width: 90%;
+    height: 300px;
+}
+
+
+/* not to import */
+
+
+/* color:#7B8CDE purple */
+
+h2 {
+    font-family: franklin-gothic-atf, sans-serif;
+    font-style: normal;
+    font-weight: 3px;
+    color: #14a18c;
+    padding-top: 4%;
+    letter-spacing: 0.25px;
+    border-bottom-width: 2px;
+    /*border-bottom-style: solid;*/
+}
+
+h3 {
+    font-family: franklin-gothic-atf, sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 150%;
+}
+
+
+/*profileimg {height: 50px; width: 50px; border-radius: 50%; margin-top:0%; margin-right: 2%;margin-bottom:-0.5%}*/
+
+img {
+    width: 90%;
+    padding: 0px;
+    display: inline;
+}
+
+
+/* ------------------- Slideshow container ----------------------*/
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+}
+
+
+/* Next & previous buttons */
+
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: -1%;
+    padding: 16px;
+    margin-top: -22px;
+    color: #55555548;
+    font-weight: bold;
+    font-size: 200%;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: -1%;
+    padding: 16px;
+    margin-top: -22px;
+    color: #55555548;
+    font-weight: bold;
+    font-size: 200%;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: all;
+}
+
+
+/* On hover */
+
+.prev:hover,
+.next:hover {
+    color: rgb(240, 240, 240);
+}
+
+
+/* slide dots */
+
+.dot {
+    cursor: pointer;
+    height: 10px;
+    text-align: center;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.4s ease;
+}
+
+.mySlides {
+    display: none;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+
+/* Fading animation */
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
