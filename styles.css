@@ -21,12 +21,40 @@ header {
     color: white;
     font-size: 300%;
     background-color: #302665;
-    border-color: #302665;
-    padding: 2.5%;
+    border-color: #FFE385;
+    padding: 0%;
     padding-bottom: 0%;
     font-family: "Bison";
     margin: 0%;
     height: min-content;
+}
+
+.div {
+    text-align: center;
+    color: white;
+    font-size: 300%;
+    background-color: #302665;
+    border-color: #FFE385;
+    padding: 0%;
+    padding-bottom: 0%;
+    font-family: "Bison";
+    margin: 0%;
+    height: min-content;
+    padding: 0px
+}
+
+.p {
+    text-align: center;
+    color: white;
+    font-size: 300%;
+    background-color: #302665;
+    border-color: #FFE385;
+    padding: 0%;
+    padding-bottom: 0%;
+    font-family: "Bison";
+    margin: 0%;
+    height: min-content;
+    padding: 0px
 }
 
 
@@ -40,8 +68,10 @@ header {
     letter-spacing: 1px;
     display: inline-block;
     border-style: solid;
-    border-color: white;
-    border-width: 2 px;
+    border-color: #FFE385;
+    /*yellow*/
+    border-width: 5px;
+    border-width: 0 px;
     border-left: none;
     background-color: #302665;
 }
@@ -49,9 +79,9 @@ header {
 .topnav a,
 .dropdown {
     display: inline-block;
-    color: white;
+    color: black;
     position: relative;
-    background-color: #000000;
+    background-color: #C9CEE1;
     text-align: center;
     text-decoration: none;
     font-size: 20px;
@@ -89,13 +119,14 @@ header {
 
 .topnav a:hover,
 .ddcontent a:hover {
-    background-color: #7DE2D1;
+    background-color: #BB8C09;
     color: white;
 }
 
 .topnav a.active,
 #active {
-    background-color: white;
+    background-color: #FFE385;
+    /*yellow*/
     color: black;
 }
 
@@ -177,7 +208,7 @@ footer {
 
 body {
     font-family: franklin-gothic-atf, sans-serif;
-    background: white;
+    background: #302665;
     color: #000000;
     font-size: 14px;
     margin: 0%;
@@ -201,7 +232,7 @@ h2 {
     font-family: franklin-gothic-atf, sans-serif;
     font-style: normal;
     font-weight: 3px;
-    color: #14a18c;
+    color: #BB8C09;
     padding-top: 4%;
     letter-spacing: 0.25px;
     border-bottom-width: 2px;
@@ -285,6 +316,17 @@ img {
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.4s ease;
+}
+
+.yellow-bar {
+    background-color: #FFE385;
+    /* soft yellow color */
+    padding: 0px;
+    /* adjust padding as needed */
+    text-align: center;
+    /* center the text */
+    font-size: 18px;
+    /* adjust font size as needed */
 }
 
 .mySlides {
