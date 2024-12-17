@@ -32,3 +32,15 @@ function carousel() {
 // });
 
 carousel();
+
+
+
+var dateobj = new Date();
+
+// Year from above object  
+// is being fetched using getFullYear()  
+var dateObject = dateobj.getFullYear();
+
+// Printing current year  
+document.getElementById("currentYear").innerHTML =
+    "" + dateObject;

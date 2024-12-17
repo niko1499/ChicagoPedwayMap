@@ -157,7 +157,7 @@ body {
 }
 
 .timeline-carousel__item-inner p {
-    font-size: 12px;
+    font-size: 24px;
     line-height: 18px;
     color: white;
     width: 60%;
@@ -166,7 +166,7 @@ body {
 }
 
 .timeline-carousel__item-inner .read-more {
-    font-size: 12px;
+    font-size: 36px;
     color: #b38c52;
     display: table;
     margin-bottom: 10px;
