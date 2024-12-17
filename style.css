@@ -297,3 +297,17 @@ img {
     width: 1000px;
     height: auto
 }
+
+.p {
+    text-align: center;
+    color: white;
+    font-size: 300%;
+    background-color: #302665;
+    border-color: #FFE385;
+    padding: 0%;
+    padding-bottom: 0%;
+    font-family: "Bison";
+    margin: 0%;
+    height: min-content;
+    padding: 0px
+}
