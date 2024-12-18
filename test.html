@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+</head>
+
+<body>
+    <canvas id="pdfCanvas"></canvas>
+
+    <script>
+        const url = 'https://example.com/sample.pdf'; // PDF URL
+
+        // The PDF.js library will render the PDF into this canvas
+        const canvas = document.getElementById('pdfCanvas');
+        const context = canvas.getContext('2d');
+
+        // Function to handle errors
+        function renderPDF(url) {
+            // Fetch the PDF
+            pdfjsLib.getDocument(url).promise.then(pdf => {
+                console.log("PDF loaded successfully");
+
+                // Render the first page (page 1)
+                pdf.getPage(1).then(page => {
+                    console.log("Rendering page 1");
+
+                    const scale = 1.5; // Adjust the scale for better visibility (increase or decrease)
+                    const viewport = page.getViewport({
+                        scale: scale
+                    });
+
+                    // Set canvas size based on the page's dimensions
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    // Render the page onto the canvas
+                    page.render({
+                        canvasContext: context,
+                        viewport: viewport
+                    }).promise.then(() => {
+                        console.log("Page rendered");
+                    }).catch(error => {
+                        console.error("Error rendering page: ", error);
+                    });
+                }).catch(error => {
+                    console.error("Error getting page: ", error);
+                });
+            }).catch(error => {
+                console.error("Error loading PDF: ", error);
+            });
+        }
+
+        renderPDF(url); // Start the rendering process
+    </script>
+</body>
+
+</html>

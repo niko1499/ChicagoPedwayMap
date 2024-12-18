@@ -13,6 +13,28 @@
     src: url('Bison.ttf');
 }
 
+iframe {
+    height: 80vh;
+}
+
+
+/* Hide desktop-only content on mobile screens */
+
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+}
+
+
+/* Hide mobile-only content on desktop screens */
+
+@media (min-width: 768px) {
+    .mobile-only {
+        display: none;
+    }
+}
+
 
 /* header & top navigation bar */
 

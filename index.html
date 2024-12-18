@@ -18,6 +18,7 @@
     <header>
         <div>
             ChicagoPedwayMap
+            <title>ChicagoPedwayMap.com</title>
             <link rel="shortcut icon" type="image/x-icon" href="pedway.ico?">
         </div>
     </header>
@@ -35,10 +36,50 @@
             <a href="PedwayMap5.0.pdf"> Download Map</a>
         </p>
     </iframe> -->
+    <!-- <embed src="PedwayMap5.0.pdf#toolbar=0" width="2000" height="2000"> -->
 
-    <embed src="PedwayMap5.0.pdf#toolbar=0" width="2000" height="1000">
+    <!-- <iframe src="PedwayMap5.0.pdf#toolbar=0" width="2000" height="2000"> -->
+    <!-- <iframe src="PedwayMap5.0.pdf#toolbar=0" style="position: center;  height: 95%; border: none"></iframe> -->
+
+
+    <div height="2000">
+        <iframe src="PedwayMap5.0.pdf#toolbar=0" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' style="height:1000px;width:100%;border:none;overflow:hidden;"></iframe>
+
+    </div>
+
     <!-- <div class="desktop-only"><embed src="PedwayMap5.0.pdf#toolbar=0" width="2000" height="1000"></div> -->
     <!-- <div class="mobile-only"><embed src="PedwayMap5.0.pdf" width="2000" height="1000"></div> -->
+
+
+
+
+
+    <canvas id="pdfCanvas"></canvas>
+
+    <script>
+        const url = 'https://example.com/sample.pdf'; // PDF URL
+
+        // The PDF.js library will render the PDF into this canvas
+        const canvas = document.getElementById('pdfCanvas');
+        const context = canvas.getContext('2d');
+
+        // Fetch the PDF
+        pdfjsLib.getDocument(url).promise.then(pdf => {
+            pdf.getPage(1).then(page => {
+                const viewport = page.getViewport({
+                    scale: 1
+                });
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                page.render({
+                    canvasContext: context,
+                    viewport: viewport
+                });
+            });
+        });
+    </script>
+
 
 
     <link href="styles.css" rel="stylesheet">
