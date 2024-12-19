@@ -19,7 +19,18 @@
 
     <link rel="shortcut icon" type="image/png" href="PedwayFlavicon.png">
 
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Hide all divs by default */
+        
+        .chrome,
+        .firefox,
+        .edge,
+        .other {
+            display: none;
+        }
+    </style>
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -56,12 +67,36 @@
         </iframe>
     </div> -->
 
-    <!-- Version WITH toolbar -->
-    <div style="height: 2000px;">
-        <iframe src="PedwayMap5.0.pdf#toolbar=1" onload="" style="height: 2000px; width: 100%; border: none; overflow: hidden;">
-        </iframe>
-    </div>
 
+
+
+
+
+
+
+
+    <div class="chrome">
+        <!-- Version WITH toolbar -->
+        <div style="height: 2000px;">
+            <iframe src="PedwayMap5.0.pdf#toolbar=1" onload="" style="height: 2000px; width: 100%; border: none; overflow: hidden;">
+        </iframe>
+        </div>
+    </div>
+    <div class="firefox">
+        <p style="color:rgb(255, 255, 255);" style="font-size: 200px;">Firefox PDF rendering results in pixelation.</p>
+        <p style="color:rgb(255, 255, 255);" style="font-size: 36;">Try downloading it instead and using a local PDF viewing software or Chrome.</p>
+        <a href="https://chicagopedwaymap.com/PedwayMap5.0.pdf"> PedwayMap5.0.pdf</a>
+    </div>
+    <div class="edge">
+        <p style="color:rgb(255, 255, 255);" style="font-size: 200px;">Edge PDF rendering results in pixelation.</p>
+        <p style="color:rgb(255, 255, 255);" style="font-size: 36;">Try downloading it instead and using a local PDF viewing software or Chrome.</p>
+        <a href="https://chicagopedwaymap.com/PedwayMap5.0.pdf"> PedwayMap5.0.pdf</a></div>
+    <div class="other">
+        <div style="height: 2000px;">
+            <iframe src="PedwayMap5.0.pdf#toolbar=1" onload="" style="height: 2000px; width: 100%; border: none; overflow: hidden;">
+        </iframe>
+        </div>
+    </div>
     <!-- Version WITH toolbar -->
     <!-- <div id="pdf">
         <object id="pdf_content" width="100%" height="1500px" type="application/pdf" trusted="yes" application="yes" title="Assembly" data="PedwayMap5.0.pdf?#zoom=100&scrollbar=1&toolbar=1&navpanes=1&">
@@ -85,38 +120,64 @@
 
 
 
-    <canvas id="pdfCanvas"></canvas>
-
     <script>
-        const url = 'https://example.com/sample.pdf'; // PDF URL
+        // Detect the user's browser using the userAgent string
+        const userAgent = navigator.userAgent.toLowerCase();
 
-        // The PDF.js library will render the PDF into this canvas
-        const canvas = document.getElementById('pdfCanvas');
-        const context = canvas.getContext('2d');
-
-        // Fetch the PDF
-        pdfjsLib.getDocument(url).promise.then(pdf => {
-            pdf.getPage(1).then(page => {
-                const viewport = page.getViewport({
-                    scale: 1
-                });
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-
-                page.render({
-                    canvasContext: context,
-                    viewport: viewport
-                });
-            });
-        });
+        // Check for Chrome, Firefox, and Edge
+        if (userAgent.indexOf('chrome') > -1 && userAgent.indexOf('edg') === -1 && userAgent.indexOf('opr') === -1) {
+            // Chrome (make sure it's not Edge or Opera)
+            document.querySelector('.chrome').style.display = 'block';
+        } else if (userAgent.indexOf('firefox') > -1) {
+            // Firefox
+            document.querySelector('.firefox').style.display = 'block';
+        } else if (userAgent.indexOf('edg') > -1) {
+            // Edge
+            document.querySelector('.edge').style.display = 'block';
+        } else {
+            // Other browsers
+            document.querySelector('.other').style.display = 'block';
+        }
     </script>
 
+</body>
+
+</html>
 
 
-    <link href="styles.css" rel="stylesheet">
-    <footer>
-        ChicagoPedwayMap 2024
-        <span class="links">
+
+<canvas id="pdfCanvas"></canvas>
+
+<script>
+    const url = 'https://example.com/sample.pdf'; // PDF URL
+
+    // The PDF.js library will render the PDF into this canvas
+    const canvas = document.getElementById('pdfCanvas');
+    const context = canvas.getContext('2d');
+
+    // Fetch the PDF
+    pdfjsLib.getDocument(url).promise.then(pdf => {
+        pdf.getPage(1).then(page => {
+            const viewport = page.getViewport({
+                scale: 1
+            });
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+
+            page.render({
+                canvasContext: context,
+                viewport: viewport
+            });
+        });
+    });
+</script>
+
+
+
+<link href="styles.css" rel="stylesheet">
+<footer>
+    ChicagoPedwayMap 2024
+    <span class="links">
       <a href="contact.html">Contact Me</a>
     </div>
     </footer>
