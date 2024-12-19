@@ -95,3 +95,6 @@ largefiles-othertoignore/
 
 # text files for grammar
 text/
+
+# ignore source vector image files
+*.svg
