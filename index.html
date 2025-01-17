@@ -77,8 +77,8 @@
 
     <div class="chrome">
         <!-- Version WITH toolbar -->
-        <div style="height: 2000px;">
-            <iframe src="PedwayMap.pdf#toolbar=1" onload="" style="height: 2000px; width: 100%; border: none; overflow: hidden;">
+        <div style="height: 1111px;">
+            <iframe src="PedwayMap.pdf#toolbar=1" onload="" style="height: 1111px; width: 100%; border: none; overflow: hidden;">
 
         </iframe>
         </div>
@@ -91,6 +91,20 @@
         <p style="color:rgb(255, 255, 255);" style="font-size: 200px;">Edge PDF rendering results in pixelation.</p>
         <p style="color:rgb(255, 255, 255);" style="font-size: 36;">Try downloading it instead and using a local PDF viewing software or Chrome.</p>
     </div>
+
+    <p style="color:rgb(255, 255, 255);padding-left: 20%;padding-right: 20%;padding-top: 10px;padding-bottom: 10px; font-size: 36;">Mysterious underground paths sprawl out to touch over 35 square blocks of the Chicago Central Business District. Some entrances at major train stations are obvious, others subtly announce themselves with the rune like blue and gold compass rose, and
+        others still go unmarked and until now unmapped inside the various commercial buildings in the loop.</p>
+
+    <p style="color:rgb(255, 255, 255);padding-left: 15%;padding-right: 15%;padding-top: 10px;padding-bottom: 10px; font-size: 36;">The goal of this project was to create a comprehensive map of the Chicago Pedway and the connecting buildings with up to date information about entrances including their accessibility. The official Pedway Map published by the city of Chicago lacks
+        several of the latest extensions and closures as well as ADA information. In order to gather accurate ADA information like ramp, elevator, escalator, and accessible door locations I spent hours walking the pedway with a body cam as a way of taking
+        notes for the project. However this information is frequently changing and elevators often go in and out of service. If you have more up to date information about the status of any section of the pedway please reach out via the contact me section
+        of the website and I will update the map. In addition to providing navigation directions for the tunnels, this map also acts as a historical document of abandoned sections of the tunnel network.
+    </p>
+
+    <p style="color:rgb(255, 255, 255);padding-left: 20%;padding-right: 20%;padding-top: 10px;padding-bottom: 10px; ">As a result of the high level of detail, the map is best viewed zoomed into a particular section you are interested in. Zoomed out, the extreme level of detail makes the map too busy to be plainly legible. It was heavily inspired by maps of Tokyo
+        train stations which use a similar symbology, color shading, and a philosophy of lots of small localized highly detailed maps posted through a station instead of one huge map.
+    </p>
+
     <a href="PedwayMap.pdf" download="PedwayMap_2024_NXG.pdf">
         <button class="btn" style="width:100%;height: 206px;"><i class="fa fa-download"></i> Download PedwayMap.pdf</button>
     </a>
@@ -147,7 +161,7 @@
 <canvas id="pdfCanvas"></canvas>
 
 <script>
-    const url = 'https://example.com/sample.pdf'; // PDF URL
+    const url = 'https://chicagopedwaymap.com/PedwayMap.pdf'; // PDF URL
 
     // The PDF.js library will render the PDF into this canvas
     const canvas = document.getElementById('pdfCanvas');
