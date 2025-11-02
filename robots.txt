@@ -1,0 +1,9 @@
+User-agent: *
+# Allow everything (public site). Point crawlers to the sitemap and specify host.
+Allow: /
+
+Sitemap: https://chicagopedwaymap.com/sitemap.xml
+Host: chicagopedwaymap.com
+
+# Optional: add crawl-delay if you notice heavy crawling, e.g.
+# Crawl-delay: 10

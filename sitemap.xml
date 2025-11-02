@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Sitemap for https://chicagopedwaymap.com generated 2025-11-02 -->
+
+  <url>
+    <loc>https://chicagopedwaymap.com/</loc>
+    <lastmod>2025-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://chicagopedwaymap.com/index.html</loc>
+    <lastmod>2025-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://chicagopedwaymap.com/extras.html</loc>
+    <lastmod>2025-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://chicagopedwaymap.com/timeline.html</loc>
+    <lastmod>2025-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://chicagopedwaymap.com/contact.html</loc>
+    <lastmod>2025-11-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://chicagopedwaymap.com/PedwayMap1979.html</loc>
+    <lastmod>2025-11-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://chicagopedwaymap.com/PedwayMap2008.html</loc>
+    <lastmod>2025-11-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://chicagopedwaymap.com/PedwayMap.pdf</loc>
+    <lastmod>2025-11-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://chicagopedwaymap.com/test.html</loc>
+    <lastmod>2025-11-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://chicagopedwaymap.com/detour.html</loc>
+    <lastmod>2025-11-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+</urlset>
