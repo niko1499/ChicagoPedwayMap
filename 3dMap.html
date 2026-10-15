@@ -1,0 +1,184 @@
+<!-- Updated: FEB-1-2025 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  .flex-container {
+    display: flex;
+    justify-content: space-around; /* space between images */
+    align-items: center; /* vertical alignment */
+  }
+  .flex-container img {
+    max-width: 45%; /* responsive width */
+  }
+</style>
+<head>
+
+    <title>Chicago Pedway Map — Interactive Map & Pedestrian Tunnels of Downtown Chicago</title>
+
+    <meta name="description" content="Chicago Pedway Map — comprehensive interactive map and information on pedestrian tunnels, ADA access, and historic sections of the Chicago Pedway. Download the PDF map or explore by neighborhood.">
+    <link rel="canonical" href="https://chicagopedwaymap.com/">
+
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="./styles.css">
+    <!--comment for header-->
+    <link rel="stylesheet" href="./style.css">
+
+
+    <!-- <link rel="stylesheet" href="./styles.css"> -->
+
+    <link rel="shortcut icon" type="image/png" href="PedwayFlavicon.png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "WebSite",
+                    "@id": "https://chicagopedwaymap.com/#website",
+                    "url": "https://chicagopedwaymap.com/",
+                    "name": "Chicago Pedway Map",
+                    "description": "Detailed map and information about Chicago's pedestrian tunnels (Pedway).",
+                    "potentialAction": {
+                        "@type": "SearchAction",
+                        "target": "https://chicagopedwaymap.com/?s={search_term_string}",
+                        "query-input": "required name=search_term_string"
+                    }
+                },
+                {
+                    "@type": "Organization",
+                    "@id": "https://chicagopedwaymap.com/#organization",
+                    "name": "ChicagoPedwayMap",
+                    "url": "https://chicagopedwaymap.com/"
+                }
+            ]
+        }
+        </script>
+    <style>
+        /* Hide all divs by default */
+        
+        .chrome,
+        .firefox,
+        .edge,
+        .other {
+            display: none;
+        }
+    </style>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EM934VK7RC"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-EM934VK7RC');
+</script>
+
+<body>
+
+    <object type="text/html" width=100% height="50" data="header.html"></object>
+
+
+
+    <div class="topnav">
+        <a href="index.html" class="">Full Pedway Map</a>
+        <a href="3dMap.html" class="active">3D Map</a>
+        <a href="extras.html"> Extras</a>
+        <a href="timeline.html"> Historical Maps</a>
+        <a href="contact.html"> Feedback</a>
+
+    </div>
+
+
+
+    <div class="flex-container">
+    <img src="Pictures\3D_Preview\Screenshot 2026-10-15 134341.png" alt="Image 1">
+    <img src="Pictures\3D_Preview\Screenshot 2026-10-15 134422.png" alt="Image 2">
+    </div>
+
+    <h1 style="color:rgb(255, 255, 255); text-align:center; font-size:40px; margin-top:16px;">Chicago Pedway Map 3D — Three dimensional interactive map of the Chicago Pedway</h1>
+
+    <p style="color:rgb(255, 255, 255);padding-left: 20%;padding-right: 20%;padding-top: 10px;padding-bottom: 10px; font-size: 36;">Fully interactive with camera control and filtering of various elements.</p>
+
+
+    <p style="color:rgb(255, 255, 255);padding-left: 15%;padding-right: 15%;padding-top: 10px;padding-bottom: 10px; font-size: 36;">Intuitive representation of links between layers. 3D rendering of Chicago Pedway. 3D visualizaton of Chicago Pedway. 
+    </p>
+
+    <p style="color:rgb(255, 255, 255);padding-left: 20%;padding-right: 20%;padding-top: 10px;padding-bottom: 10px; ">Currently a work in progress. Coming soon...</p>
+
+
+
+    <script>
+        // Detect the user's browser using the userAgent string
+        const userAgent = navigator.userAgent.toLowerCase();
+
+        // Check for Chrome, Firefox, and Edge
+        if (userAgent.indexOf('chrome') > -1 && userAgent.indexOf('edg') === -1 && userAgent.indexOf('opr') === -1) {
+            // Chrome (make sure it's not Edge or Opera)
+            document.querySelector('.chrome').style.display = 'block';
+        } else if (userAgent.indexOf('firefox') > -1) {
+            // Firefox
+            document.querySelector('.firefox').style.display = 'block';
+        } else if (userAgent.indexOf('edg') > -1) {
+            // Edge
+            document.querySelector('.edge').style.display = 'block';
+        } else {
+            // Other browsers
+            document.querySelector('.other').style.display = 'block';
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+
+<canvas id="pdfCanvas"></canvas>
+
+<script>
+    const url = 'https://chicagopedwaymap.com/PedwayMap.pdf'; // PDF URL
+
+    // The PDF.js library will render the PDF into this canvas
+    const canvas = document.getElementById('pdfCanvas');
+    const context = canvas.getContext('2d');
+
+    // Fetch the PDF
+    pdfjsLib.getDocument(url).promise.then(pdf => {
+        pdf.getPage(1).then(page => {
+            const viewport = page.getViewport({
+                scale: 1
+            });
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+
+            page.render({
+                canvasContext: context,
+                viewport: viewport
+            });
+        });
+    });
+</script>
+
+
+
+<link href="styles.css" rel="stylesheet">
+<footer>
+    ChicagoPedwayMap 2026
+    <span class="links">
+      <a href="contact.html">Contact Me</a>
+    </div>
+    </footer>
+</body>
+</html>

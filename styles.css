@@ -399,3 +399,12 @@ img {
         opacity: 1
     }
 }
+
+ .image-container {
+    text-align: center; /* optional: center the images */
+  }
+  .image-container img {
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+  }

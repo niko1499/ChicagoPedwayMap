@@ -311,3 +311,12 @@ img {
     height: min-content;
     padding: 0px
 }
+
+ .image-container {
+    text-align: center; /* optional: center the images */
+  }
+  .image-container img {
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+  }
