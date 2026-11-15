@@ -1,0 +1,9 @@
+Chicago Pedway 3D map: add to the website
+==========================================
+Unzip into the ROOT of your ChicagoPedwayMap repository (next to index.html).
+
+  3dMap.html      REPLACES the "coming soon" page: site header and nav, with the viewer embedded
+  3d/index.html   the 3D viewer (built file, do not edit by hand)
+  3dmap-dev/      source and build tools (see 3dmap-dev/README.md)
+
+Then commit and push. The page will be live at chicagopedwaymap.com/3dMap.html

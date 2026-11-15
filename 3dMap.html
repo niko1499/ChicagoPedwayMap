@@ -3,13 +3,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-  .flex-container {
-    display: flex;
-    justify-content: space-around; /* space between images */
-    align-items: center; /* vertical alignment */
+  .map3d {
+    display: block;
+    width: 100%;
+    height: calc(100vh - 150px);
+    min-height: 420px;
+    border: 0;
+    background: #0d1117;
   }
-  .flex-container img {
-    max-width: 45%; /* responsive width */
+  .map3d-container {
+    position: relative;
+  }
+  .map3d-container:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    background: #0d1117;
+  }
+  .map3d-container:fullscreen .map3d {
+    height: 100%;
+    min-height: 0;
+  }
+  .map3d-fullscreen {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 1;
+    padding: 8px 12px;
+    border: 1px solid #fff6;
+    border-radius: 6px;
+    background: #161b22e8;
+    color: #fff;
+    cursor: pointer;
+  }
+  .map3d-note {
+    color: #fff;
+    text-align: center;
+    padding: 8px 10px;
   }
 </style>
 <head>
@@ -102,10 +131,29 @@
 
 
 
-    <div class="flex-container">
-    <img src="Pictures\3D_Preview\Screenshot 2026-10-15 134341.png" alt="Image 1">
-    <img src="Pictures\3D_Preview\Screenshot 2026-10-15 134422.png" alt="Image 2">
+    <div class="map3d-container" id="map3d-container">
+        <iframe class="map3d" src="3D-Map/3d/index.html" title="Chicago Pedway 3D map" allowfullscreen></iframe>
+        <button class="map3d-fullscreen" id="map3d-fullscreen" type="button" aria-pressed="false">Full screen</button>
     </div>
+    <p class="map3d-note">Drag to rotate, scroll or pinch to zoom.</p>
+
+    <script>
+        const map3dContainer = document.getElementById('map3d-container');
+        const map3dFullscreenButton = document.getElementById('map3d-fullscreen');
+
+        map3dFullscreenButton.addEventListener('click', () => {
+            const fullscreenChange = document.fullscreenElement === map3dContainer
+                ? document.exitFullscreen()
+                : map3dContainer.requestFullscreen();
+            fullscreenChange.catch(error => console.error('Unable to change map fullscreen mode.', error));
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+            const isFullscreen = document.fullscreenElement === map3dContainer;
+            map3dFullscreenButton.textContent = isFullscreen ? 'Exit full screen' : 'Full screen';
+            map3dFullscreenButton.setAttribute('aria-pressed', String(isFullscreen));
+        });
+    </script>
 
     <h1 style="color:rgb(255, 255, 255); text-align:center; font-size:40px; margin-top:16px;">Chicago Pedway Map 3D — Three dimensional interactive map of the Chicago Pedway</h1>
 
@@ -114,10 +162,6 @@
 
     <p style="color:rgb(255, 255, 255);padding-left: 15%;padding-right: 15%;padding-top: 10px;padding-bottom: 10px; font-size: 36;">Intuitive representation of links between layers. 3D rendering of Chicago Pedway. 3D visualizaton of Chicago Pedway. 
     </p>
-
-    <p style="color:rgb(255, 255, 255);padding-left: 20%;padding-right: 20%;padding-top: 10px;padding-bottom: 10px; ">Currently a work in progress. Coming soon...</p>
-
-
 
     <script>
         // Detect the user's browser using the userAgent string
