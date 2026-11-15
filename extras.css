@@ -1,3 +1,58 @@
 .img {
     style="max-height:100px; max-width:100px; overflow: hidden"
 }
+
+/* Bookmarks / external links list (replaces the old embedded Google Sheet) */
+.bookmarks {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 720px;
+    margin: 30px auto 0;
+    padding: 0 16px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bookmark-section {
+    margin-bottom: 18px;
+    background: #f8e3a1;
+}
+
+.bookmark-section h2 {
+    margin: 0;
+    padding: 4px 6px;
+    background: #302665;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.25;
+}
+
+.bookmark-section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.bookmark-section li {
+    border-bottom: 1px solid #d9c27f;
+    padding: 2px 6px;
+    font-size: 15px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.bookmark-section a {
+    color: #1a0dab;
+    text-decoration: underline;
+}
+
+.bookmark-section a:visited {
+    color: #5a1a9e;
+}
+
+.bookmark-section a:hover,
+.bookmark-section a:focus {
+    color: #302665;
+    background: #fff3c8;
+}
