@@ -1,0 +1,526 @@
+var nav_PedwayNav = new Object();
+
+nav_PedwayNav.tabCategory="basic";
+nav_PedwayNav.holidayButton="Christmas_Ornaments";
+nav_PedwayNav.mouseoverEffect="true";
+nav_PedwayNav.modernButton="Basic_Black";
+nav_PedwayNav.mouseoverBold="false";
+nav_PedwayNav.mouseoverBgcolor="";
+nav_PedwayNav.textColor="#FFFFFF";
+nav_PedwayNav.accentType="none";
+nav_PedwayNav.hasLinks="true";
+nav_PedwayNav.bold="false";
+nav_PedwayNav.mouseoverTextcolor="#C5DD97";
+nav_PedwayNav.lineWidth="2";
+nav_PedwayNav.accentColor="Black";
+nav_PedwayNav.type="Navigation";
+nav_PedwayNav.mouseoverUnderline="false";
+nav_PedwayNav.selectedEffect="true";
+nav_PedwayNav.justification="center";
+nav_PedwayNav.simpleButton="Autumn_Leaves";
+nav_PedwayNav.basicTab="White";
+nav_PedwayNav.selectedUnderline="false";
+nav_PedwayNav.localPreview="false";
+nav_PedwayNav.orientation="vertical";
+nav_PedwayNav.lineColor="#000000";
+nav_PedwayNav.buttonCategory="basic";
+nav_PedwayNav.imageHeight="31";
+nav_PedwayNav.squareTab="Camel";
+nav_PedwayNav.dirty="false";
+nav_PedwayNav.navID="nav_PedwayNav";
+nav_PedwayNav.selectedItalic="false";
+nav_PedwayNav.importedImageSelected="";
+nav_PedwayNav.textFont="Helvetica";
+nav_PedwayNav.background="";
+nav_PedwayNav.texturedButton="Brick";
+nav_PedwayNav.imageWidth="114";
+nav_PedwayNav.selectedBold="false";
+nav_PedwayNav.accentStyle="Arrow";
+nav_PedwayNav.numLinks="14";
+nav_PedwayNav.mouseoverItalic="false";
+nav_PedwayNav.underline="false";
+nav_PedwayNav.verticalSpacing="10";
+nav_PedwayNav.funButton="Arts_and_Crafts";
+nav_PedwayNav.horizontalWrap="5";
+nav_PedwayNav.style="buttons";
+nav_PedwayNav.basicButton="Blue";
+nav_PedwayNav.importedImageMouseOver="";
+nav_PedwayNav.selectedBgcolor="";
+nav_PedwayNav.graphicSelected="true";
+nav_PedwayNav.shinyButton="Shiny_Aqua";
+nav_PedwayNav.border="";
+nav_PedwayNav.version="5";
+nav_PedwayNav.sophisticatedButton="Antique";
+nav_PedwayNav.selectedTextcolor="#FDEDC0";
+nav_PedwayNav.horizontalSpacing="10";
+nav_PedwayNav.graphicMouseover="true";
+nav_PedwayNav.importedImage="";
+nav_PedwayNav.italic="false";
+nav_PedwayNav.brightButton="Chicky";
+nav_PedwayNav.darkButton="Basic_Black";
+nav_PedwayNav.textSize="9";
+nav_PedwayNav.width="115";
+nav_PedwayNav.height="563";
+
+nav_PedwayNav.navName = "PedwayNav";
+nav_PedwayNav.imagePath = "/~media/elements/LayoutClipart/../LayoutClipart/Buttons/Basic_Button_Blue.gif";
+nav_PedwayNav.selectedImagePath = "/~media/elements/LayoutClipart/../LayoutClipart/Buttons/Basic_Button_Royal_Blue.gif";
+nav_PedwayNav.mouseOverImagePath = "/~media/elements/LayoutClipart/../LayoutClipart/Buttons/Basic_Button_Royal_Blue.gif";
+nav_PedwayNav.imageWidth = "114";
+nav_PedwayNav.imageHeight = "31";
+nav_PedwayNav.fontClass = "size9 Helvetica9";
+nav_PedwayNav.fontFace = "Helvetica, Arial, sans-serif";
+
+
+var baseHref = '';
+// this will only work if getElementsByTagName works
+if (document.getElementsByTagName)
+{
+    // this will only work if we can find a base tag
+    var base = document.getElementsByTagName('base');
+    // Verify that the base object exists
+    if (base && base.length > 0)
+    {
+        // if you don't specify a base href, href comes back as undefined
+        if (base[0].href != undefined)
+        {
+            // get the base href
+            baseHref = base[0].href;
+            // add a trailing slash if base href doesn't already have one
+            if (baseHref != '' && baseHref.charAt(baseHref.length - 1) != '/')
+            {
+                baseHref += '/';
+            }
+        }
+    }
+}
+
+
+nav_PedwayNav.links=new Array(14);
+var nav_PedwayNav_Link1 = new Object();
+nav_PedwayNav_Link1.type = "existing";
+nav_PedwayNav_Link1.displayName = "Pedway OPTIONS";
+nav_PedwayNav_Link1.linkWindow = "_blank";
+nav_PedwayNav_Link1.linkValue = "Pedway6.html";
+nav_PedwayNav_Link1.linkIndex = "1";
+nav_PedwayNav.links[0] = nav_PedwayNav_Link1;
+var nav_PedwayNav_Link2 = new Object();
+nav_PedwayNav_Link2.type = "existing";
+nav_PedwayNav_Link2.displayName = "Pedway - 2018";
+nav_PedwayNav_Link2.linkWindow = "_blank";
+nav_PedwayNav_Link2.linkValue = "PEDWAY2018a.html";
+nav_PedwayNav_Link2.linkIndex = "2";
+nav_PedwayNav.links[1] = nav_PedwayNav_Link2;
+var nav_PedwayNav_Link3 = new Object();
+nav_PedwayNav_Link3.type = "existing";
+nav_PedwayNav_Link3.displayName = "Pedway - 2017";
+nav_PedwayNav_Link3.linkWindow = "_blank";
+nav_PedwayNav_Link3.linkValue = "PEDWAY2018.html";
+nav_PedwayNav_Link3.linkIndex = "3";
+nav_PedwayNav.links[2] = nav_PedwayNav_Link3;
+var nav_PedwayNav_Link4 = new Object();
+nav_PedwayNav_Link4.type = "existing";
+nav_PedwayNav_Link4.displayName = "No Funding Shift";
+nav_PedwayNav_Link4.linkWindow = "_blank";
+nav_PedwayNav_Link4.linkValue = "PedwayFunding.html";
+nav_PedwayNav_Link4.linkIndex = "4";
+nav_PedwayNav.links[3] = nav_PedwayNav_Link4;
+var nav_PedwayNav_Link5 = new Object();
+nav_PedwayNav_Link5.type = "existing";
+nav_PedwayNav_Link5.displayName = "Appeal Options";
+nav_PedwayNav_Link5.linkWindow = "_blank";
+nav_PedwayNav_Link5.linkValue = "400.html";
+nav_PedwayNav_Link5.linkIndex = "5";
+nav_PedwayNav.links[4] = nav_PedwayNav_Link5;
+var nav_PedwayNav_Link6 = new Object();
+nav_PedwayNav_Link6.type = "existing";
+nav_PedwayNav_Link6.displayName = "Early Graphics";
+nav_PedwayNav_Link6.linkWindow = "_blank";
+nav_PedwayNav_Link6.linkValue = "Pedway-Swissotel.html";
+nav_PedwayNav_Link6.linkIndex = "6";
+nav_PedwayNav.links[5] = nav_PedwayNav_Link6;
+var nav_PedwayNav_Link7 = new Object();
+nav_PedwayNav_Link7.type = "existing";
+nav_PedwayNav_Link7.displayName = "Sub Area E Only";
+nav_PedwayNav_Link7.linkWindow = "_self";
+nav_PedwayNav_Link7.linkValue = "VillageMarket.html";
+nav_PedwayNav_Link7.linkIndex = "7";
+nav_PedwayNav.links[6] = nav_PedwayNav_Link7;
+var nav_PedwayNav_Link8 = new Object();
+nav_PedwayNav_Link8.type = "existing";
+nav_PedwayNav_Link8.displayName = "2004 Incomplete";
+nav_PedwayNav_Link8.linkWindow = "_self";
+nav_PedwayNav_Link8.linkValue = "Pedway2004.html";
+nav_PedwayNav_Link8.linkIndex = "8";
+nav_PedwayNav.links[7] = nav_PedwayNav_Link8;
+var nav_PedwayNav_Link9 = new Object();
+nav_PedwayNav_Link9.type = "existing";
+nav_PedwayNav_Link9.displayName = "Cent. Area 2001";
+nav_PedwayNav_Link9.linkWindow = "_blank";
+nav_PedwayNav_Link9.linkValue = "Pedway5.html";
+nav_PedwayNav_Link9.linkIndex = "9";
+nav_PedwayNav.links[8] = nav_PedwayNav_Link9;
+var nav_PedwayNav_Link10 = new Object();
+nav_PedwayNav_Link10.type = "existing";
+nav_PedwayNav_Link10.displayName = "Magellan Argues";
+nav_PedwayNav_Link10.linkWindow = "_blank";
+nav_PedwayNav_Link10.linkValue = "Pedway4.html";
+nav_PedwayNav_Link10.linkIndex = "10";
+nav_PedwayNav.links[9] = nav_PedwayNav_Link10;
+var nav_PedwayNav_Link11 = new Object();
+nav_PedwayNav_Link11.type = "existing";
+nav_PedwayNav_Link11.displayName = "400 Covenants";
+nav_PedwayNav_Link11.linkWindow = "_blank";
+nav_PedwayNav_Link11.linkValue = "Pedway3.html";
+nav_PedwayNav_Link11.linkIndex = "11";
+nav_PedwayNav.links[10] = nav_PedwayNav_Link11;
+var nav_PedwayNav_Link12 = new Object();
+nav_PedwayNav_Link12.type = "existing";
+nav_PedwayNav_Link12.displayName = "2000 Article";
+nav_PedwayNav_Link12.linkWindow = "_blank";
+nav_PedwayNav_Link12.linkValue = "Pedway2.html";
+nav_PedwayNav_Link12.linkIndex = "12";
+nav_PedwayNav.links[11] = nav_PedwayNav_Link12;
+var nav_PedwayNav_Link13 = new Object();
+nav_PedwayNav_Link13.type = "existing";
+nav_PedwayNav_Link13.displayName = "1999 Letters";
+nav_PedwayNav_Link13.linkWindow = "_blank";
+nav_PedwayNav_Link13.linkValue = "PedwayPictures.html";
+nav_PedwayNav_Link13.linkIndex = "13";
+nav_PedwayNav.links[12] = nav_PedwayNav_Link13;
+var nav_PedwayNav_Link14 = new Object();
+nav_PedwayNav_Link14.type = "existing";
+nav_PedwayNav_Link14.displayName = "WEBSITE  INDEX";
+nav_PedwayNav_Link14.linkWindow = "_self";
+nav_PedwayNav_Link14.linkValue = "index.html";
+nav_PedwayNav_Link14.linkIndex = "14";
+nav_PedwayNav.links[13] = nav_PedwayNav_Link14;
+function mouseOn(tdElement, newBackgroundImage)
+{
+	if(tdElement != null) {
+		tdElement.style.backgroundImage = 'url(' + escapeScript(newBackgroundImage) + ')';
+	}
+}
+
+function mouseOff(tdElement, newBackgroundImage)
+{
+	if(tdElement != null) {
+		tdElement.style.backgroundImage = 'url(' + escapeScript(newBackgroundImage) + ')';
+	}
+}
+
+function doMouseChange(Navigation,tdElement,linkIndex,bisMouseOver) {
+	if (Navigation.mouseoverEffect != 'true') {
+		return;
+	}
+	var link = Navigation.links[linkIndex-1];
+	var bIsCurrentPage = isCurrentPage(link);
+	if ((Navigation.graphicSelected == 'true' || Navigation.selectedTextcolor)
+			&& bIsCurrentPage && 'true' == Navigation.selectedEffect) {
+		return;
+	}
+	
+	var fontElement = getLinkFontElement(tdElement);
+	
+	if(fontElement != null) {
+		doFontChange(Navigation,fontElement,bIsCurrentPage,bisMouseOver);
+	}
+	
+	if (Navigation.graphicMouseover == 'true') {
+		if (bisMouseOver) {
+			mouseOn(tdElement,escapeHtmlInlineScript(Navigation.mouseOverImagePath));
+		} else {
+			mouseOff(tdElement, escapeHtmlInlineScript(Navigation.imagePath));
+		}
+	}
+}
+function addStyle(Navigation, Link,tdElement) {
+	if(tdElement == null) {
+		return;
+	}
+	var strImg = Navigation.imagePath;
+	var strFontColor = Navigation.textColor;
+	if ('true' == Navigation.selectedEffect) {
+		if (Navigation.graphicSelected == 'true') {
+			strImg = Navigation.selectedImagePath;
+		}
+		if (Navigation.selectedTextcolor) {
+			strFontColor = Navigation.selectedTextcolor;
+		}
+	}
+	var strImgUrl = "url('"+escapeHtmlInlineScript(strImg)+"')";
+	tdElement.style.backgroundImage=strImgUrl;
+	var fontElement = getLinkFontElement(tdElement);
+	if (fontElement != null) {
+		fontElement.style.color = strFontColor;
+		if ('true' == Navigation.selectedEffect) {
+			if ('true' == Navigation.selectedBold) {
+				fontElement.style.fontWeight = "bold";
+			}
+			if ('true' == Navigation.selectedItalic) {
+				fontElement.style.fontStyle = "italic";
+			}
+			if ('true' == Navigation.selectedUnderline) {
+				fontElement.style.textDecoration = "underline";
+			}
+		}
+	}
+}
+// Combined escape html and javascript
+function escapeHtmlInlineScript(s, escapeSingleQuotes, escapeDoubleQuotes){
+	return htmlEncode(escapeScript(s, escapeSingleQuotes, escapeDoubleQuotes));
+}
+
+function htmlEncode(s){
+	if (typeof(s) != "string") return "";
+	
+	var result = "";
+	for (var i = 0; i < s.length; i++) {
+		var ch = s.charAt(i);
+		switch (ch) {
+		case '<':
+			result += "&lt;";
+			break;
+		case '>':
+			result += "&gt;";
+			break;
+		case '&':
+			result += "&amp;";
+			break;
+		case '"':
+			result += "&quot;";
+			break;
+		case "'":
+			result += "&#39;";
+			break;
+		default:
+			result += ch;
+		}
+	}
+	return result;
+}
+
+/* escapes slashes and quotes. the default is to escape quotes,
+ * but this can be turned off.
+ * this function is used for javascript and also for escaping urls
+ * within background-image css.	 
+ */
+function escapeScript(s, escapeSingleQuotes, escapeDoubleQuotes){
+	if (typeof(s) != "string") return "";
+	
+	var result = "";
+	for (var i = 0; i < s.length; i++) {
+		var ch = s.charAt(i);
+		switch (ch) {
+		case '\'':
+			if (escapeSingleQuotes == null || escapeSingleQuotes)
+				result += "\\\'";
+			break;
+		case '\"':
+			if (escapeDoubleQuotes == null || escapeDoubleQuotes)
+				result += "\\\"";
+			break;
+		case '\\':
+			result += "\\\\";
+			break;
+		default:
+			result += ch;
+		}
+	}
+	return result;
+}
+
+//
+// This .js file includes utility functions used by both graphical and text navs
+// in their rendering.  User pages including a nav element will import this file, along
+// with TextNavigation.js and GraphicNavigation.js.  The functions within will
+// be called by the [navname].js file generated at publish time.
+
+function fixLinkValue(Link)
+{
+	if(Link.type!='existing')
+	{
+		return Link.linkValue;
+	}
+	else
+	{
+		return baseHref + strRelativePathToRoot + Link.linkValue;
+	}
+}
+
+function isCurrentPage(Link)
+{
+	if(Link.type!='existing')
+	{
+		return false;
+	}
+	var strLinkValue = Link.linkValue.toLowerCase();
+	return (strRelativePagePath == strLinkValue);
+}
+
+function toggleOnMouseChange(fontElement,newColor, bold, underline, italic)
+{
+	if(fontElement == null) {
+		return;
+	}
+	if(newColor)
+	{
+		fontElement.style.color=newColor;
+	}
+	fontElement.style.fontWeight = (bold=='true' ? 'bold' : 'normal');
+	fontElement.style.textDecoration = (underline=='true' ? 'underline' : 'none');
+	fontElement.style.fontStyle = (italic=='true' ? 'italic' : 'normal');
+
+}
+
+function doFontChange(Navigation,fontElement,bIsCurrentPage,bisMouseOver) {
+	if(fontElement == null) {
+		return;
+	}
+	var textColor;
+	var baseTextColor = Navigation.textColor;
+	var bold;
+	var baseBold = Navigation.bold;
+	var underline;
+	var baseUnderline = Navigation.underline;
+	var italic;
+	var baseItalic = Navigation.italic;
+	if (bIsCurrentPage && 'true' == Navigation.selectedEffect) {
+		textColor = Navigation.selectedTextcolor ? Navigation.selectedTextcolor
+				: (Navigation.mouseoverTextColor ? Navigation.mouseoverTextcolor
+						: Navigation.textColor);
+		baseTextColor = Navigation.selectedTextcolor ? Navigation.selectedTextcolor
+				: Navigation.textColor;
+		baseBold = bold = Navigation.selectedBold;
+		baseUnderline = underline = Navigation.selectedUnderline;
+		baseItalic = italic = Navigation.selectedItalic;
+	} else {
+		textColor = Navigation.mouseoverTextcolor ? Navigation.mouseoverTextcolor
+				: Navigation.textColor;
+		bold = Navigation.mouseoverBold;
+		underline = Navigation.mouseoverUnderline;
+		italic = Navigation.mouseoverItalic;
+	}
+	
+	if(bisMouseOver) {
+		toggleOnMouseChange(fontElement,textColor,bold,underline,italic);
+	} else {
+		toggleOnMouseChange(fontElement,baseTextColor,baseBold,baseUnderline,baseItalic);
+	}
+	
+
+}
+
+function addMouseAndStyleSupportPedwayNav(Navigation,navTbId) {
+	var startNode;
+
+	if(typeof(nav_element_id) != 'undefined' && document.getElementById(nav_element_id) != null) {
+		startNode = document.getElementById(nav_element_id);
+			
+	} else if(navTbId != null) {
+		startNode = document.getElementById(navTbId);
+			
+	}
+	
+	if(startNode != null) {
+	  searchForCurrentPageTd(Navigation,startNode);
+	}
+	
+
+}
+
+function searchForCurrentPageTd(Navigation,startNode) {
+	
+	if(startNode.childNodes != null) {
+		for(var i=0;i<startNode.childNodes.length;i++){
+			if(addStyleForCurrentPageTd(Navigation,startNode.childNodes[i])){
+			   return;	
+			} else {
+			   searchForCurrentPageTd(Navigation,startNode.childNodes[i]);
+			}
+		}
+	}
+
+}
+
+function addStyleForCurrentPageTd(Navigation,currentNode) {
+	if(Navigation.orientation == 'horizontal') {
+		if(currentNode.tagName == 'TD' && currentNode.id != '' && currentNode.id.indexOf(Navigation.navName+navTDLinkPart) != -1){
+			var currentTDIdPrefix = Navigation.navName+navTDLinkPart;
+			var linkId = currentNode.id.substring(currentTDIdPrefix.length,currentNode.id.length);
+			if(isCurrentPage(Navigation.links[linkId-1]) == true) {
+				addStyle(Navigation, Navigation.links[linkId-1],currentNode);
+				return true;
+			}
+		}
+	} else {
+		if(currentNode.tagName == 'TR' && currentNode.id != '' && currentNode.id.indexOf(navTRLinkPrefix) != -1){	
+			var currentTRIdPrefix = navTRLinkPrefix+Navigation.navName;
+			var linkId = currentNode.id.substring(currentTRIdPrefix.length,currentNode.id.length);
+			if(isCurrentPage(Navigation.links[linkId-1]) == true && currentNode.childNodes != null) {
+				var currentPageTd;
+				for(var i=0;currentNode.childNodes.length;i++) {
+					if(typeof(currentNode.childNodes[i].tagName) != 'undefined' && currentNode.childNodes[i].tagName == 'TD' && currentNode.childNodes[i].id.indexOf(Navigation.navName+navTDLinkPart) != -1) {
+						currentPageTd = currentNode.childNodes[i];
+						addStyle(Navigation, Navigation.links[linkId - 1],currentPageTd,currentNode);
+						return true;
+					}
+				}
+			}
+		}
+	}
+	return false;
+}
+
+function getChildElementFromTree(startNode,nodesToTraverse) {
+	var currentChildNode = startNode;
+	
+	for(var n= 0;n<nodesToTraverse.length;n++) {
+		currentChildNode = getMatchingChildByTag(currentChildNode.childNodes,nodesToTraverse[n]);
+	}
+	
+	return currentChildNode;
+}
+
+
+function getMatchingChildByTag(childNodes,tagName) {
+	var child;
+	for(var i=0;childNodes.length;i++) {
+		if(childNodes[i].tagName == tagName) {
+			child = childNodes[i];
+			break;
+		}
+	}
+	return child;
+}
+function getLinkFontElement(tdElement){
+	var fontElement;
+	var aElement = getChildElementFromTree(tdElement,['A']);
+	for(var i=0;i < aElement.childNodes.length;i++) {
+		if(aElement.childNodes[i].tagName == 'DIV') {
+		 	fontElement = getChildElementFromTree(aElement.childNodes[i],['FONT']);
+		 	break;
+		} else if(aElement.childNodes[i].tagName == 'FONT'){
+		 	fontElement = 	aElement.childNodes[i];
+		 	break;
+		}
+	
+	}
+	return fontElement;
+}
+
+
+
+	if(typeof(navTRLinkPrefix) == 'undefined') {
+		navTRLinkPrefix = 'vNavTR_Link_';
+	}
+	if(typeof(navTDLinkPart) == 'undefined') {
+		navTDLinkPart = '_Link';
+	}
+	if(document.getElementById('nav_version') == null) {
+	if (typeof(navTBSuffix) == 'undefined') {
+	navTBSuffix = 0;
+	} else {navTBSuffix++;}
+		document.write('<TABLE ID="ntb'+navTBSuffix+'"  border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><TR id=\"vNavTR_Link_PedwayNav1\"><TD NOWRAP HEIGHT=\"31\" ALIGN=\"center\" VALIGN=\"MIDDLE\" id=\"PedwayNav_Link1\" style=\"cursor: pointer;cursor: hand;color:#FFFFFF;background-image:url(\/~media\/elements\/LayoutClipart\/..\/LayoutClipart\/Buttons\/Basic_Button_Blue.gif);background-repeat:no-repeat;background-position:center;\"  onmouseover=\"doMouseChange(nav_PedwayNav,this,\'1\',true);\" onmouseout=\"doMouseChange(nav_PedwayNav,this,\'1\',false);\"><A HREF=\"\/Pedway6.html\" TARGET=\"_blank\" STYLE=\"text-decoration:none;vertical-align:middle;\" NAME=\"Pedway OPTIONS\"><DIV  STYLE=\"width:114px;height:31px;cursor: pointer;cursor: hand;\"><FONT ID=\"PedwayNav_f1\" FACE=\"Helvetica, Arial, sans-serif\" CLASS=\"size9 Helvetica9\" STYLE=\"vertical-align:middle;color:#FFFFFF;line-height:31px;\">Pedway&nbsp;OPTIONS<\/FONT><\/DIV><\/A><\/TD><\/TR><TR><TD><IMG style=\"display: block;\" SRC=\"\/tp.gif\" HEIGHT=\"10\" WIDTH=\"1\" BORDER=\"0\" ALT=\"\"><\/TD><\/TR><TR id=\"vNavTR_Link_PedwayNav2\"><TD NOWRAP HEIGHT=\"31\" ALIGN=\"center\" VALIGN=\"MIDDLE\" id=\"PedwayNav_Link2\" style=\"cursor: pointer;cursor: hand;color:#FFFFFF;background-image:url(\/~media\/elements\/LayoutClipart\/..\/LayoutClipart\/Buttons\/Basic_Button_Blue.gif);background-repeat:no-repeat;background-position:center;\"  onmouseover=\"doMouseChange(nav_PedwayNav,this,\'2\',true);\" onmouseout=\"doMouseChange(nav_PedwayNav,this,\'2\',false);\"><A HREF=\"\/PEDWAY2018a.html\" TARGET=\"_blank\" STYLE=\"text-decoration:none;vertical-align:middle;\" NAME=\"Pedway - 2018\"><DIV  STYLE=\"width:114px;height:31px;cursor: pointer;cursor: hand;\"><FONT ID=\"PedwayNav_f2\" FACE=\"Helvetica, Arial, sans-serif\" CLASS=\"size9 Helvetica9\" STYLE=\"vertical-align:middle;color:#FFFFFF;line-height:31px;\">Pedway&nbsp;-&nbsp;2018<\/FONT><\/DIV><\/A><\/TD><\/TR><TR><TD><IMG style=\"display: block;\" SRC=\"\/tp.gif\" HEIGHT=\"10\" WIDTH=\"1\" BORDER=\"0\" ALT=\"\"><\/TD><\/TR><TR id=\"vNavTR_Link_PedwayNav3\"><TD NOWRAP HEIGHT=\"31\" ALIGN=\"center\" VALIGN=\"MIDDLE\" id=\"PedwayNav_Link3\" style=\"cursor: pointer;cursor: hand;color:#FFFFFF;background-image:url(\/~media\/elements\/LayoutClipart\/..\/LayoutClipart\/Buttons\/Basic_Button_Blue.gif);background-repeat:no-repeat;background-position:center;\"  onmouseover=\"doMouseChange(nav_PedwayNav,this,\'3\',true);\" onmouseout=\"doMouseChange(nav_PedwayNav,this,\'3\',false);\"><A HREF=\"\/PEDWAY2018.html\" TARGET=\"_blank\" STYLE=\"text-decoration:none;vertical-align:middle;\" NAME=\"Pedway - 2017\"><DIV  STYLE=\"width:114px;height:31px;cursor: pointer;cursor: hand;\"><FONT ID=\"PedwayNav_f3\" FACE=\"Helvetica, Arial, sans-serif\" CLASS=\"size9 Helvetica9\" STYLE=\"vertical-align:middle;color:#FFFFFF;line-height:31px;\">Pedway&nbsp;-&nbsp;2017<\/FONT><\/DIV><\/A><\/TD><\/TR><TR><TD><IMG style=\"display: block;\" SRC=\"\/tp.gif\" HEIGHT=\"10\" WIDTH=\"1\" BORDER=\"0\" ALT=\"\"><\/TD><\/TR><TR id=\"vNavTR_Link_PedwayNav4\"><TD NOWRAP HEIGHT=\"31\" ALIGN=\"center\" VALIGN=\"MIDDLE\" id=\"PedwayNav_Link4\" style=\"cursor: pointer;cursor: hand;color:#FFFFFF;background-image:url(\/~media\/elements\/LayoutClipart\/..\/LayoutClipart\/Buttons\/Basic_Button_Blue.gif);background-repeat:no-repeat;background-position:center;\"  onmouseover=\"doMouseChange(nav_PedwayNav,this,\'4\',true);\" onmouseout=\"doMouseChange(nav_PedwayNav,this,\'4\',false);\"><A HREF=\"\/PedwayFunding.html\" TARGET=\"_blank\" STYLE=\"text-decoration:none;vertical-align:middle;\" NAME=\"No Funding Shift\"><DIV  STYLE=\"width:114px;height:31px;cursor: pointer;cursor: hand;\"><FONT ID=\"PedwayNav_f4\" FACE=\"Helvetica, Arial, sans-serif\" CLASS=\"size9 Helvetica9\" STYLE=\"vertical-align:middle;color:#FFFFFF;line-height:31px;\">No&nbsp;Funding&nbsp;Shift<\/FONT><\/DIV><\/A><\/TD><\/TR><TR><TD><IMG style=\"display: block;\" SRC=\"\/tp.gif\" HEIGHT=\"10\" WIDTH=\"1\" BORDER=\"0\" ALT=\"\"><\/TD><\/TR><TR id=\"vNavTR_Link_PedwayNav5\"><TD NOWRAP HEIGHT=\"31\" ALIGN=\"center\" VALIGN=\"MIDDLE\" id=\"PedwayNav_Link5\" style=\"cursor: pointer;cursor: hand;color:#FFFFFF;background-image:url(\/~media\/elements\/LayoutClipart\/..\/LayoutClipart\/Buttons\/Basic_Button_Blue.gif);background-repeat:no-repeat;background-position:center;\"  onmouseover=\"doMouseChange(nav_PedwayNav,this,\'5\',true);\" onmouseout=\"doMouseChange(nav_PedwayNav,this,\'5\',false);\"><A HREF=\"\/400.html\" TARGET=\"_blank\" STYLE=\"text-decoration:none;vertical-align:middle;\" NAME=\"Appeal Options\"><DIV  STYLE=\"width:114px;height:31px;cursor: pointer;cursor: hand;\"><FONT ID=\"PedwayNav_f5\" FACE=\"Helvetica, Arial, sans-serif\" CLASS=\"size9 Helvetica9\" STYLE=\"vertical-align:middle;color:#FFFFFF;line-height:31px;\">Appeal&nbsp;Options<\/FONT><\/DIV><\/A><\/TD><\/TR><TR><TD><IMG style=\"display: block;\" SRC=\"\/tp.gif\" HEIGHT=\"10\" WIDTH=\"1\" BORDER=\"0\" ALT=\"\"><\/TD><\/TR><TR id=\"vNavTR_Link_PedwayNav6\"><TD NOWRAP HEIGHT=\"31\" ALIGN=\"center\" VALIGN=\"MIDDLE\" id=\"PedwayNav_Link6\" style=\"cursor: pointer;cursor: hand;color:#FFFFFF;background-image:url(\/~media\/elements\/LayoutClipart\/..\/LayoutClipart\/Buttons\/Basic_Button_Blue.gif);background-repeat:no-repeat;background-position:center;\"  onmouseover=\"doMouseChange(nav_PedwayNav,this,\'6\',true);\" onmouseout=\"doMouseChange(nav_PedwayNav,this,\'6\',false);\"><A HREF=\"\/Pedway-Swissotel.html\" TARGET=\"_blank\" STYLE=\"text-decoration:none;vertical-align:middle;\" NAME=\"Early Graphics\"><DIV  STYLE=\"width:114px;height:31px;cursor: pointer;cursor: hand;\"><FONT ID=\"PedwayNav_f6\" FACE=\"Helvetica, Arial, sans-serif\" CLASS=\"size9 Helvetica9\" STYLE=\"vertical-align:middle;color:#FFFFFF;line-height:31px;\">Early&nbsp;Graphics<\/FONT><\/DIV><\/A><\/TD><\/TR><TR><TD><IMG style=\"display: block;\" SRC=\"\/tp.gif\" HEIGHT=\"10\" WIDTH=\"1\" BORDER=\"0\" ALT=\"\"><\/TD><\/TR><TR id=\"vNavTR_Link_PedwayNav7\"><TD NOWRAP HEIGHT=\"31\" ALIGN=\"center\" VALIGN=\"MIDDLE\" id=\"PedwayNav_Link7\" style=\"cursor: pointer;cursor: hand;color:#FFFFFF;background-image:url(\/~media\/elements\/LayoutClipart\/..\/LayoutClipart\/Buttons\/Basic_Button_Blue.gif);background-repeat:no-repeat;background-position:center;\"  onmouseover=\"doMouseChange(nav_PedwayNav,this,\'7\',true);\" onmouseout=\"doMouseChange(nav_PedwayNav,this,\'7\',false);\"><A HREF=\"\/VillageMarket.html\" TARGET=\"_self\" STYLE=\"text-decoration:none;vertical-align:middle;\" NAME=\"Sub Area E Only\"><DIV  STYLE=\"width:114px;height:31px;cursor: pointer;cursor: hand;\"><FONT ID=\"PedwayNav_f7\" FACE=\"Helvetica, Arial, sans-serif\" CLASS=\"size9 Helvetica9\" STYLE=\"vertical-align:middle;color:#FFFFFF;line-height:31px;\">Sub&nbsp;Area&nbsp;E&nbsp;Only<\/FONT><\/DIV><\/A><\/TD><\/TR><TR><TD><IMG style=\"display: block;\" SRC=\"\/tp.gif\" HEIGHT=\"10\" WIDTH=\"1\" BORDER=\"0\" ALT=\"\"><\/TD><\/TR><TR id=\"vNavTR_Link_PedwayNav8\"><TD NOWRAP HEIGHT=\"31\" ALIGN=\"center\" VALIGN=\"MIDDLE\" id=\"PedwayNav_Link8\" style=\"cursor: pointer;cursor: hand;color:#FFFFFF;background-image:url(\/~media\/elements\/LayoutClipart\/..\/LayoutClipart\/Buttons\/Basic_Button_Blue.gif);background-repeat:no-repeat;background-position:center;\"  onmouseover=\"doMouseChange(nav_PedwayNav,this,\'8\',true);\" onmouseout=\"doMouseChange(nav_PedwayNav,this,\'8\',false);\"><A HREF=\"\/Pedway2004.html\" TARGET=\"_self\" STYLE=\"text-decoration:none;vertical-align:middle;\" NAME=\"2004 Incomplete\"><DIV  STYLE=\"width:114px;height:31px;cursor: pointer;cursor: hand;\"><FONT ID=\"PedwayNav_f8\" FACE=\"Helvetica, Arial, sans-serif\" CLASS=\"size9 Helvetica9\" STYLE=\"vertical-align:middle;color:#FFFFFF;line-height:31px;\">2004&nbsp;Incomplete<\/FONT><\/DIV><\/A><\/TD><\/TR><TR><TD><IMG style=\"display: block;\" SRC=\"\/tp.gif\" HEIGHT=\"10\" WIDTH=\"1\" BORDER=\"0\" ALT=\"\"><\/TD><\/TR><TR id=\"vNavTR_Link_PedwayNav9\"><TD NOWRAP HEIGHT=\"31\" ALIGN=\"center\" VALIGN=\"MIDDLE\" id=\"PedwayNav_Link9\" style=\"cursor: pointer;cursor: hand;color:#FFFFFF;background-image:url(\/~media\/elements\/LayoutClipart\/..\/LayoutClipart\/Buttons\/Basic_Button_Blue.gif);background-repeat:no-repeat;background-position:center;\"  onmouseover=\"doMouseChange(nav_PedwayNav,this,\'9\',true);\" onmouseout=\"doMouseChange(nav_PedwayNav,this,\'9\',false);\"><A HREF=\"\/Pedway5.html\" TARGET=\"_blank\" STYLE=\"text-decoration:none;vertical-align:middle;\" NAME=\"Cent. Area 2001\"><DIV  STYLE=\"width:114px;height:31px;cursor: pointer;cursor: hand;\"><FONT ID=\"PedwayNav_f9\" FACE=\"Helvetica, Arial, sans-serif\" CLASS=\"size9 Helvetica9\" STYLE=\"vertical-align:middle;color:#FFFFFF;line-height:31px;\">Cent.&nbsp;Area&nbsp;2001<\/FONT><\/DIV><\/A><\/TD><\/TR><TR><TD><IMG style=\"display: block;\" SRC=\"\/tp.gif\" HEIGHT=\"10\" WIDTH=\"1\" BORDER=\"0\" ALT=\"\"><\/TD><\/TR><TR id=\"vNavTR_Link_PedwayNav10\"><TD NOWRAP HEIGHT=\"31\" ALIGN=\"center\" VALIGN=\"MIDDLE\" id=\"PedwayNav_Link10\" style=\"cursor: pointer;cursor: hand;color:#FFFFFF;background-image:url(\/~media\/elements\/LayoutClipart\/..\/LayoutClipart\/Buttons\/Basic_Button_Blue.gif);background-repeat:no-repeat;background-position:center;\"  onmouseover=\"doMouseChange(nav_PedwayNav,this,\'10\',true);\" onmouseout=\"doMouseChange(nav_PedwayNav,this,\'10\',false);\"><A HREF=\"\/Pedway4.html\" TARGET=\"_blank\" STYLE=\"text-decoration:none;vertical-align:middle;\" NAME=\"Magellan Argues\"><DIV  STYLE=\"width:114px;height:31px;cursor: pointer;cursor: hand;\"><FONT ID=\"PedwayNav_f10\" FACE=\"Helvetica, Arial, sans-serif\" CLASS=\"size9 Helvetica9\" STYLE=\"vertical-align:middle;color:#FFFFFF;line-height:31px;\">Magellan&nbsp;Argues<\/FONT><\/DIV><\/A><\/TD><\/TR><TR><TD><IMG style=\"display: block;\" SRC=\"\/tp.gif\" HEIGHT=\"10\" WIDTH=\"1\" BORDER=\"0\" ALT=\"\"><\/TD><\/TR><TR id=\"vNavTR_Link_PedwayNav11\"><TD NOWRAP HEIGHT=\"31\" ALIGN=\"center\" VALIGN=\"MIDDLE\" id=\"PedwayNav_Link11\" style=\"cursor: pointer;cursor: hand;color:#FFFFFF;background-image:url(\/~media\/elements\/LayoutClipart\/..\/LayoutClipart\/Buttons\/Basic_Button_Blue.gif);background-repeat:no-repeat;background-position:center;\"  onmouseover=\"doMouseChange(nav_PedwayNav,this,\'11\',true);\" onmouseout=\"doMouseChange(nav_PedwayNav,this,\'11\',false);\"><A HREF=\"\/Pedway3.html\" TARGET=\"_blank\" STYLE=\"text-decoration:none;vertical-align:middle;\" NAME=\"400 Covenants\"><DIV  STYLE=\"width:114px;height:31px;cursor: pointer;cursor: hand;\"><FONT ID=\"PedwayNav_f11\" FACE=\"Helvetica, Arial, sans-serif\" CLASS=\"size9 Helvetica9\" STYLE=\"vertical-align:middle;color:#FFFFFF;line-height:31px;\">400&nbsp;Covenants<\/FONT><\/DIV><\/A><\/TD><\/TR><TR><TD><IMG style=\"display: block;\" SRC=\"\/tp.gif\" HEIGHT=\"10\" WIDTH=\"1\" BORDER=\"0\" ALT=\"\"><\/TD><\/TR><TR id=\"vNavTR_Link_PedwayNav12\"><TD NOWRAP HEIGHT=\"31\" ALIGN=\"center\" VALIGN=\"MIDDLE\" id=\"PedwayNav_Link12\" style=\"cursor: pointer;cursor: hand;color:#FFFFFF;background-image:url(\/~media\/elements\/LayoutClipart\/..\/LayoutClipart\/Buttons\/Basic_Button_Blue.gif);background-repeat:no-repeat;background-position:center;\"  onmouseover=\"doMouseChange(nav_PedwayNav,this,\'12\',true);\" onmouseout=\"doMouseChange(nav_PedwayNav,this,\'12\',false);\"><A HREF=\"\/Pedway2.html\" TARGET=\"_blank\" STYLE=\"text-decoration:none;vertical-align:middle;\" NAME=\"2000 Article\"><DIV  STYLE=\"width:114px;height:31px;cursor: pointer;cursor: hand;\"><FONT ID=\"PedwayNav_f12\" FACE=\"Helvetica, Arial, sans-serif\" CLASS=\"size9 Helvetica9\" STYLE=\"vertical-align:middle;color:#FFFFFF;line-height:31px;\">2000&nbsp;Article<\/FONT><\/DIV><\/A><\/TD><\/TR><TR><TD><IMG style=\"display: block;\" SRC=\"\/tp.gif\" HEIGHT=\"10\" WIDTH=\"1\" BORDER=\"0\" ALT=\"\"><\/TD><\/TR><TR id=\"vNavTR_Link_PedwayNav13\"><TD NOWRAP HEIGHT=\"31\" ALIGN=\"center\" VALIGN=\"MIDDLE\" id=\"PedwayNav_Link13\" style=\"cursor: pointer;cursor: hand;color:#FFFFFF;background-image:url(\/~media\/elements\/LayoutClipart\/..\/LayoutClipart\/Buttons\/Basic_Button_Blue.gif);background-repeat:no-repeat;background-position:center;\"  onmouseover=\"doMouseChange(nav_PedwayNav,this,\'13\',true);\" onmouseout=\"doMouseChange(nav_PedwayNav,this,\'13\',false);\"><A HREF=\"\/PedwayPictures.html\" TARGET=\"_blank\" STYLE=\"text-decoration:none;vertical-align:middle;\" NAME=\"1999 Letters\"><DIV  STYLE=\"width:114px;height:31px;cursor: pointer;cursor: hand;\"><FONT ID=\"PedwayNav_f13\" FACE=\"Helvetica, Arial, sans-serif\" CLASS=\"size9 Helvetica9\" STYLE=\"vertical-align:middle;color:#FFFFFF;line-height:31px;\">1999&nbsp;Letters<\/FONT><\/DIV><\/A><\/TD><\/TR><TR><TD><IMG style=\"display: block;\" SRC=\"\/tp.gif\" HEIGHT=\"10\" WIDTH=\"1\" BORDER=\"0\" ALT=\"\"><\/TD><\/TR><TR id=\"vNavTR_Link_PedwayNav14\"><TD NOWRAP HEIGHT=\"31\" ALIGN=\"center\" VALIGN=\"MIDDLE\" id=\"PedwayNav_Link14\" style=\"cursor: pointer;cursor: hand;color:#FFFFFF;background-image:url(\/~media\/elements\/LayoutClipart\/..\/LayoutClipart\/Buttons\/Basic_Button_Blue.gif);background-repeat:no-repeat;background-position:center;\"  onmouseover=\"doMouseChange(nav_PedwayNav,this,\'14\',true);\" onmouseout=\"doMouseChange(nav_PedwayNav,this,\'14\',false);\"><A HREF=\"\/index.html\" TARGET=\"_self\" STYLE=\"text-decoration:none;vertical-align:middle;\" NAME=\"WEBSITE  INDEX\"><DIV  STYLE=\"width:114px;height:31px;cursor: pointer;cursor: hand;\"><FONT ID=\"PedwayNav_f14\" FACE=\"Helvetica, Arial, sans-serif\" CLASS=\"size9 Helvetica9\" STYLE=\"vertical-align:middle;color:#FFFFFF;line-height:31px;\">WEBSITE&nbsp;&nbsp;INDEX<\/FONT><\/DIV><\/A><\/TD><\/TR><\/TABLE><script type="text/javascript">addMouseAndStyleSupportPedwayNav(nav_PedwayNav,"ntb'+navTBSuffix+'");'+'</scri'+'pt>');
+	}
+
