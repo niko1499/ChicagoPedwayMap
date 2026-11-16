@@ -102,20 +102,263 @@
 
 
 
-    <div class="flex-container">
-    <img src="Pictures\3D_Preview\Screenshot 2026-10-15 134341.png" alt="Image 1">
-    <img src="Pictures\3D_Preview\Screenshot 2026-10-15 134422.png" alt="Image 2">
-    </div>
+    
+    <!-- Previews of planned features -->
+    <style>
+        .planned {
+            max-width: 1200px;
+            margin: 24px auto 0;
+            padding: 0 16px;
+            color: #fff;
+            font-family: "Roboto", sans-serif;
+        }
 
-    <h1 style="color:rgb(255, 255, 255); text-align:center; font-size:40px; margin-top:16px;">Chicago Pedway Map 3D — Three dimensional interactive map of the Chicago Pedway</h1>
+        .planned h2 {
+            margin: 0 0 6px;
+            padding: 0;
+            color: #FFE385;
+            font-size: 28px;
+            font-weight: 900;
+        }
 
-    <p style="color:rgb(255, 255, 255);padding-left: 20%;padding-right: 20%;padding-top: 10px;padding-bottom: 10px; font-size: 36;">Fully interactive with camera control and filtering of various elements.</p>
+        .planned__intro {
+            margin: 0 0 18px;
+            color: #C9CEE1;
+            font-size: 16px;
+        }
 
+        .planned__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
 
-    <p style="color:rgb(255, 255, 255);padding-left: 15%;padding-right: 15%;padding-top: 10px;padding-bottom: 10px; font-size: 36;">Intuitive representation of links between layers. 3D rendering of Chicago Pedway. 3D visualizaton of Chicago Pedway. 
-    </p>
+        @media (max-width: 760px) {
+            .planned__grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
-    <p style="color:rgb(255, 255, 255);padding-left: 20%;padding-right: 20%;padding-top: 10px;padding-bottom: 10px; ">Currently a work in progress. Coming soon...</p>
+        .planned figure {
+            margin: 0;
+            background: #252528;
+            border-top: 6px solid #302665;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .planned figure a {
+            display: block;
+            background: #111;
+        }
+
+        .planned figure img {
+            display: block;
+            width: 100%;
+            height: 280px;
+            max-width: none;
+            margin: 0;
+            padding: 0;
+            float: none;
+            object-fit: cover;
+        }
+
+        .planned figcaption {
+            padding: 12px 16px 16px;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .planned figcaption strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #FFE385;
+            font-size: 17px;
+        }
+
+        .planned__tag {
+            display: inline-block;
+            margin-bottom: 8px;
+            padding: 2px 8px;
+            border-radius: 3px;
+            background: #FFE385;
+            color: #302665;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+    </style>
+
+    <section class="planned" aria-labelledby="planned-heading">
+        <h2 id="planned-heading">Planned Features</h2>
+        <p class="planned__intro">Early previews from the 3D map in development.</p>
+        <div class="planned__grid">
+            <figure>
+                <a href="Pictures/3D_Preview/Screenshot%202026-10-15%20134341.png" target="_blank" rel="noopener">
+                    <img src="Pictures/3D_Preview/Screenshot%202026-10-15%20134341.png" alt="3D view of 'L' and subway lines drawn in their line colors beneath the street grid, with green-topped station entrances and a Pedway link between them" loading="lazy">
+                </a>
+                <figcaption>
+                    <span class="planned__tag">Preview</span>
+                    <strong>Transit Lines and Entrances</strong>
+                    Important connections to CTA and Metra shown.
+                </figcaption>
+            </figure>
+            <figure>
+                <a href="Pictures/3D_Preview/Screenshot%202026-10-15%20134422.png" target="_blank" rel="noopener">
+                    <img src="Pictures/3D_Preview/Screenshot%202026-10-15%20134422.png" alt="3D view inside a station showing escalators, stairs and a curving tunnel out to a street entrance" loading="lazy">
+                </a>
+                <figcaption>
+                    <span class="planned__tag">Preview</span>
+                    <strong>Stations in 3D</strong>
+                    Intuitive ramps blend level heights.
+                </figcaption>
+            </figure>
+            <figure>
+                <a href="Pictures/3D_Preview/planned-side-view-from-south.png" target="_blank" rel="noopener">
+                    <img src="Pictures/3D_Preview/planned-side-view-from-south.png" alt="Side view from the south of a 3D model showing the elevated train, street level, Pedway level and subway stacked on top of each other, with stairs and elevators linking them" loading="lazy">
+                </a>
+                <figcaption>
+                    <span class="planned__tag">Preview</span>
+                    <strong>Cross Sectional view of complex levels</strong>
+                    Look at a station from the side and see layers stack and connect.
+                </figcaption>
+            </figure>
+            <figure>
+                <a href="Pictures/3D_Preview/planned-network-view.png" target="_blank" rel="noopener">
+                    <img src="Pictures/3D_Preview/planned-network-view.png" alt="Angled 3D view of downtown Pedway corridors under the street grid, with entrances marked and vertical links up to street level" loading="lazy">
+                </a>
+                <figcaption>
+                    <span class="planned__tag">Preview</span>
+                    <strong>Accessibility</strong>
+                    ADA freindly doors and level changes shown.
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <style>
+        .about3d {
+            max-width: 880px;
+            margin: 40px auto 0;
+            padding: 0 16px;
+            color: #fff;
+            font-family: "Roboto", sans-serif;
+            text-align: center;
+        }
+
+        .about3d__status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: #FFE385;
+            color: #302665;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .about3d__status::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #302665;
+            animation: about3d-pulse 1.6s ease-in-out infinite;
+        }
+
+        @keyframes about3d-pulse {
+            50% { opacity: 0.25; }
+        }
+
+        .about3d h1 {
+            margin: 0 0 6px;
+            font-size: clamp(28px, 6vw, 44px);
+            font-weight: 900;
+            line-height: 1.1;
+            color: #fff;
+        }
+
+        .about3d__sub {
+            margin: 0 0 24px;
+            font-size: clamp(16px, 3vw, 20px);
+            font-weight: 300;
+            color: #C9CEE1;
+        }
+
+        .about3d__features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: left;
+        }
+
+        .about3d__features li {
+            padding: 14px 16px 16px;
+            background: #252528;
+            border-left: 5px solid #FFE385;
+            border-radius: 6px;
+            font-size: 15px;
+            line-height: 1.45;
+            color: #e6e7ee;
+        }
+
+        .about3d__features strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #FFE385;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 760px) {
+            .about3d__features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .about3d__note {
+            margin: 22px 0 0;
+            font-size: 15px;
+            color: #C9CEE1;
+        }
+
+        .about3d__note a {
+            color: #FFE385;
+        }
+    </style>
+
+    <section class="about3d">
+        <span class="about3d__status">Work in progress &middot; Coming soon</span>
+        <h1>Chicago Pedway Map 3D</h1>
+        <p class="about3d__sub">A three-dimensional, interactive map of the Chicago Pedway</p>
+
+        <ul class="about3d__features">
+            <li>
+                <strong>Fully Interactive</strong>
+                Move the camera freely and filter what you see, from tunnels to entrances to transit lines.
+            </li>
+            <li>
+                <strong>Links Between Levels</strong>
+                See clearly how stairs, escalators and elevators connect the street, the Pedway and the trains.
+            </li>
+            <li>
+                <strong>True 3D Rendering</strong>
+                A full 3D visualization of the Chicago Pedway, built to match the 2D map.
+            </li>
+        </ul>
+
+        <p class="about3d__note">Until it launches, use the <a href="index.html">full Pedway map</a>. Have ideas for the 3D map? <a href="contact.html">Send feedback</a>.</p>
+    </section>
+
 
 
 
