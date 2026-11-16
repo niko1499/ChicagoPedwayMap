@@ -20,12 +20,23 @@
 
 .bookmark-section h2 {
     margin: 0;
-    padding: 4px 6px;
-    background: #302665;
+    padding: 6px 12px;
+    background: #111111;
     color: #ffffff;
-    font-size: 22px;
+    font-size: 16px;
     font-weight: bold;
-    line-height: 1.25;
+    line-height: 1.3;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* "•  ACCESS  •" style: a bullet on each side of the heading */
+.bookmark-section h2::before,
+.bookmark-section h2::after {
+    content: "\2022";
+    margin: 0 0.6em;
+    letter-spacing: 0;
 }
 
 .bookmark-section ul {
@@ -43,16 +54,17 @@
 }
 
 .bookmark-section a {
-    color: #1a0dab;
-    text-decoration: underline;
+    color: #302665;
+    text-decoration: none;
 }
 
 .bookmark-section a:visited {
-    color: #5a1a9e;
+    color: #5a3d8a;
 }
 
 .bookmark-section a:hover,
 .bookmark-section a:focus {
     color: #302665;
+    text-decoration: underline;
     background: #fff3c8;
 }

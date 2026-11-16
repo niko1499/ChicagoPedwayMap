@@ -64,14 +64,23 @@ iframe {
 header {
     text-align: center;
     color: white;
-    font-size: 300%;
+    font-size: 48px;
+    line-height: 50px;
     background-color: #302665;
     border-color: #FFE385;
-    padding: 0%;
-    padding-bottom: 0%;
-    font-family: "Bison";
+    /* room for the descenders (g, y, p); the header <object> on each page is 58px tall to match */
+    padding: 1px 8px 7px;
+    font-family: "Times New Roman", Times, serif;
     margin: 0%;
     height: min-content;
+    white-space: nowrap;
+}
+
+/* keep the site title on one line on narrow phones */
+@media (max-width: 600px) {
+    header {
+        font-size: min(48px, 8.8vw);
+    }
 }
 
 .div {
@@ -109,7 +118,7 @@ header {
     text-align: center;
     background-color: black;
     width: 100%;
-    font-family: Bison;
+    font-family: "Times New Roman", Times, serif;
     letter-spacing: 1px;
     display: inline-block;
     border-style: solid;
@@ -179,6 +188,34 @@ header {
     display: block;
 }
 
+/* mobile only: nav links become an even grid of tap-sized buttons */
+
+@media (max-width: 600px) {
+    .topnav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 4px;
+        box-sizing: border-box;
+    }
+    .topnav a {
+        flex: 1 1 30%;
+        width: auto;
+        padding: 10px 6px;
+        font-size: 17px;
+        letter-spacing: 0;
+        white-space: nowrap;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 380px) {
+    .topnav a {
+        font-size: 15px;
+        padding: 10px 4px;
+    }
+}
+
 
 /***************************************************/
 
@@ -218,7 +255,7 @@ header {
 /* Footer position: absolute;*/
 
 footer {
-    font-family: 'bison';
+    font-family: "Times New Roman", Times, serif;
     font-size: 9pt;
     font-style: light;
     font-weight: 100;
@@ -265,6 +302,12 @@ body {
 iframe {
     width: 90%;
     height: 300px;
+}
+
+/* Feedback page Google Form: tall enough to show the whole form and its Submit button */
+iframe.feedback-form {
+    width: 100%;
+    height: 1200px;
 }
 
 

@@ -29,13 +29,13 @@
     var firstLabel = root.querySelector('[data-pw-first]');
     if (firstLabel) firstLabel.textContent = cards[0].dataset.year;
 
-    // "You are here" teardrop: purple drop with the point up at the station,
-    // yellow disc with the label (modern-map symbol in the site's colours).
+    // "You are here" teardrop: charcoal drop with the point up at the station,
+    // bright yellow disc with a black label (colours from the modern-map symbol).
     var HERE_SVG =
         '<svg viewBox="0 0 60 78" xmlns="http://www.w3.org/2000/svg">' +
-        '<path d="M30 0 L52.2 36.5 A26 26 0 1 1 7.8 36.5 Z" fill="#302665"/>' +
-        '<circle cx="30" cy="50" r="21.5" fill="#FFE385"/>' +
-        '<g fill="#302665" font-family="Roboto, Arial, sans-serif" font-weight="900" font-size="9" text-anchor="middle">' +
+        '<path d="M30 0 L52.2 36.5 A26 26 0 1 1 7.8 36.5 Z" fill="#231F20"/>' +
+        '<circle cx="30" cy="50" r="21.5" fill="#FFF15C"/>' +
+        '<g fill="#231F20" font-family="Roboto, Arial, sans-serif" font-weight="900" font-size="9" text-anchor="middle">' +
         '<text x="30" y="43">YOU</text><text x="30" y="53">ARE</text><text x="30" y="63">HERE</text>' +
         '</g></svg>';
 

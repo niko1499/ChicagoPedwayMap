@@ -4,9 +4,11 @@
 
 <head>
 
-    <title>ChicagoPedwayMap.com</title>
+    <title>Pedway Videos, Maps &amp; Links | ChicagoPedwayMap.com</title>
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chicago Pedway videos, other Pedway maps, official city maps, tours, articles and resources for exploring Chicago's downtown pedestrian tunnels.">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,900" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css'>
@@ -26,7 +28,7 @@
 
 <body>
 
-    <object type="text/html" width=100% height="50" data="header.html"></object>
+    <object type="text/html" width=100% height="58" data="header.html"></object>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EM934VK7RC"></script>
@@ -50,36 +52,96 @@
     </div>
 
     <style>
-        .box {
-            display: inline-block;
-            /* background-color: orange; */
-            padding: 10px;
-            width: 650px;
+        /* YouTube playlists: dark cards like the 3D Map previews, gold top edge like the Pedway signs */
+        .videos {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 24px auto 0;
+            padding: 0 16px;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+            text-align: left;
         }
-        
-        div .p {
-            font-size: 24px;
-            line-height: 18px;
-            color: white;
-            width: 60%;
-            font-weight: 400;
-            margin-bottom: 15px;
+
+        @media (max-width: 760px) {
+            .videos {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .video-card {
+            margin: 0;
+            background: #252528;
+            border-top: 6px solid #FFE385;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        .video-card iframe {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            border: 0;
+            background: #000;
+        }
+
+        .video-card figcaption {
+            padding: 12px 16px 16px;
+            color: #e6e7ee;
+            font-size: 15px;
+            line-height: 1.45;
+        }
+
+        .video-card__tag {
+            display: inline-block;
+            margin-bottom: 8px;
+            padding: 2px 8px;
+            border-radius: 3px;
+            background: #FFE385;
+            color: #302665;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .video-card__title {
+            display: block;
+            margin-bottom: 4px;
+            color: #FFE385;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .video-card a {
+            color: #FFE385;
         }
     </style>
 
-    <body>
-        <div class="box">
-            <iframe width="2000" height="2000" src="https://www.youtube.com/embed/videoseries?si=qMUy3Kld1kWPAFZS&amp;list=PLPeVg8fi-cXIfM2lHqZV3vmXpjRG7v5Wh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    <section class="videos" aria-label="Pedway videos">
+        <figure class="video-card">
+            <iframe src="https://www.youtube.com/embed/videoseries?si=qMUy3Kld1kWPAFZS&amp;list=PLPeVg8fi-cXIfM2lHqZV3vmXpjRG7v5Wh" title="Pedway Video Journals playlist on YouTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p style="color:rgb(255, 255, 255);" style="font-size: 16px;">Playlist of my Pedway Video Journals used as notes in my map making</p>
-        </div>
-        <div class="box">
-            <iframe width="auto" height="auto" src="https://www.youtube.com/embed/videoseries?si=liiCKWh0EpKH6Sap&amp;list=PLPeVg8fi-cXIiNm7ZSlB6a3TNQ3krFQQU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            <figcaption>
+                <span class="video-card__tag">Field notes</span>
+                <strong class="video-card__title">Pedway Video Journals</strong>
+                Walkthroughs I recorded on a body cam while surveying the tunnels. These are the notes behind the entrances, elevators, ramps and closures on the map.
+            </figcaption>
+        </figure>
+        <figure class="video-card">
+            <iframe src="https://www.youtube.com/embed/videoseries?si=liiCKWh0EpKH6Sap&amp;list=PLPeVg8fi-cXIiNm7ZSlB6a3TNQ3krFQQU" title="Chicago Pedway videos by other creators on YouTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p style="color:rgb(255, 255, 255);" style="font-size: 16px;">Playlist of other Pedway Content on YouTube</p>
-
-        </div>
-    </body>
+            <figcaption>
+                <span class="video-card__tag">More to watch</span>
+                <strong class="video-card__title">The Pedway on YouTube</strong>
+                A collection of tours, explainers and walks through Chicago&rsquo;s underground Pedway from other creators.
+            </figcaption>
+        </figure>
+    </section>
 
     <!-- Bookmarks: external links, grouped by section. Add new links as <li> items in the matching section. -->
     <div class="bookmarks">

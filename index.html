@@ -53,6 +53,11 @@
         </script>
     <link rel="stylesheet" href="./pdfviewer/pedway-pdf-viewer.css">
     <style>
+        /* Full map page only: grey background (every other page is purple) */
+        body {
+            background-color: #3C3C3C;
+        }
+
         .map-bar {
             display: flex;
             align-items: center;
@@ -60,7 +65,7 @@
             flex-wrap: wrap;
             gap: 8px 14px;
             padding: 8px 16px;
-            background: #1d1d1e;
+            background: #3C3C3C;
             color: #fff;
             font-family: "Roboto", sans-serif;
             font-size: 15px;
@@ -108,8 +113,55 @@
 
         .map-frame,
         .map-themed {
+            --ppv-bg: #3C3C3C;
             --ppv-height: min(85vh, 1111px);
             height: min(85vh, 1111px);
+        }
+
+        /* Phones: the map is wider than tall, so size the viewer to the map
+           (plus room for the zoom buttons) instead of leaving a tall empty area. */
+        @media (max-width: 600px) {
+            .map-themed {
+                --ppv-height: min(85vh, calc(84vw + 150px));
+                height: min(85vh, calc(84vw + 150px));
+            }
+        }
+
+        /* About-the-map text below the map, in the card style of the 3D Map page */
+        .map-about {
+            max-width: 880px;
+            margin: 8px auto 24px;
+            padding: 6px 22px;
+            background: #252528;
+            border-left: 5px solid #FFE385;
+            border-radius: 6px;
+            box-sizing: border-box;
+            color: #e6e7ee;
+            font-family: "Roboto", sans-serif;
+            font-size: 16px;
+            line-height: 1.55;
+            text-align: left;
+        }
+
+        .map-about p {
+            margin: 14px 0;
+        }
+
+        .map-about .map-about__title {
+            margin: 14px 0 0;
+            padding: 0;
+            text-align: left;
+            color: #FFE385;
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        @media (max-width: 920px) {
+            .map-about {
+                margin-left: 16px;
+                margin-right: 16px;
+            }
         }
 
         .map-frame iframe {
@@ -136,7 +188,7 @@
 
 <body>
 
-    <object type="text/html" width=100% height="50" data="header.html"></object>
+    <object type="text/html" width=100% height="58" data="header.html"></object>
 
 
 
@@ -230,21 +282,42 @@
             }
         }
     </script>
-    <h1 style="color:rgb(255, 255, 255); text-align:center; font-size:40px; margin-top:16px;">Chicago Pedway Map — Detailed Map of Downtown Pedestrian Tunnels</h1>
 
-    <p style="color:rgb(255, 255, 255);padding-left: 20%;padding-right: 20%;padding-top: 10px;padding-bottom: 10px; font-size: 36;">Mysterious underground paths sprawl out to touch over 35 square blocks of the Chicago Central Business District. Some entrances at major train stations are obvious, others subtly announce themselves with the rune like blue and gold compass rose, and
-        others still go unmarked and until now unmapped inside the various commercial buildings in the loop.</p>
+    <div class="map-about">
+        <h2 class="map-about__title">Chicago Pedway</h2>
+        <p>Mysterious underground paths sprawl out to touch over 35 square blocks of the Chicago Central Business District. Some entrances at major train stations are obvious, others subtly announce themselves with the rune like blue and gold compass rose, and
+            others still go unmarked and until now unmapped inside the various commercial buildings in the loop.</p>
+
+    </div>
+
+    <div class="map-about">
+        <h2 class="map-about__title">Detailed Map of Downtown Pedestrian Tunnels</h2>
+
+        <p>The goal of this project was to create a comprehensive map of the Chicago Pedway and the connecting buildings with up to date information about entrances including their accessibility. The official Pedway Map published by the city (2013) of Chicago lacks
+            several of the latest extensions and closures as well as ADA information. In order to gather accurate ADA information like ramp, elevator, escalator, and accessible door locations I spent hours walking the pedway with a body cam as a way of taking
+            notes for the project. However this information is frequently changing and elevators often go in and out of service. If you have more up to date information about the status of any section of the pedway please reach out via the contact me section
+            of the website and I will update the map. In addition to providing navigation directions for the tunnels, this map also acts as a historical document of abandoned sections of the tunnel network.
+        </p>
+
+    </div>
+
+    <div class="map-about">
+        <h2 class="map-about__title">How to navigate the Chicago Pedway</h2>
+
+        <p>As a result of the high level of detail, the map is best viewed zoomed into a particular section you are interested in. Zoomed out, the extreme level of detail makes the map too busy to be plainly legible. Ideally mini maps of this detail level would be posted croped in to a local area of one block to improve wayfinding in the Pedway. 
+            ADA doors and elevators are indicated by the blue color. Seek map key for more details of the may symbology. 
+        </p>
+    </div>
 
 
-    <p style="color:rgb(255, 255, 255);padding-left: 15%;padding-right: 15%;padding-top: 10px;padding-bottom: 10px; font-size: 36;">The goal of this project was to create a comprehensive map of the Chicago Pedway and the connecting buildings with up to date information about entrances including their accessibility. The official Pedway Map published by the city of Chicago lacks
-        several of the latest extensions and closures as well as ADA information. In order to gather accurate ADA information like ramp, elevator, escalator, and accessible door locations I spent hours walking the pedway with a body cam as a way of taking
-        notes for the project. However this information is frequently changing and elevators often go in and out of service. If you have more up to date information about the status of any section of the pedway please reach out via the contact me section
-        of the website and I will update the map. In addition to providing navigation directions for the tunnels, this map also acts as a historical document of abandoned sections of the tunnel network.
-    </p>
+    <div class="map-about">
+        <h2 class="map-about__title">About</h2>
 
-    <p style="color:rgb(255, 255, 255);padding-left: 20%;padding-right: 20%;padding-top: 10px;padding-bottom: 10px; ">As a result of the high level of detail, the map is best viewed zoomed into a particular section you are interested in. Zoomed out, the extreme level of detail makes the map too busy to be plainly legible. It was heavily inspired by maps of Tokyo
-        train stations which use a similar symbology, color shading, and a philosophy of lots of small localized highly detailed maps posted through a station instead of one huge map.
-    </p>
+        <p>Initially motivated by the lack of an update to the offical City Pedway map between the years of 2013 and 2025. A 12 year period in which several sections opened or closed. 
+            As well detour difficulties when a broken elevator closed one of the main ADA entrances to Millenium Station. 
+            It was heavily inspired by maps of Tokyo train stations which use a similar symbology, color shading, and a philosophy of lots of small localized highly detailed maps posted through a station instead of one huge map.
+        </p>
+    </div>
 
     <a href="PedwayMap.pdf" download="PedwayMap_2024_NXG.pdf">
         <button class="btn" style="width:100%;height: 206px;"><i class="fa fa-download"></i> Download PedwayMap.pdf</button>
