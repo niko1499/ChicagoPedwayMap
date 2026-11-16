@@ -2,279 +2,233 @@
 <html lang="en">
 
 <head>
-
-    <title>ChicagoPedwayMap.com</title>
+    <title>Historical Pedway Maps | ChicagoPedwayMap.com</title>
 
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,900" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A timeline of Chicago Pedway maps from the 1979 city planning document to today.">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
     <link rel="stylesheet" href="./styles.css">
-    <!--comment for header-->
     <link rel="stylesheet" href="./style.css">
-
-
-    <!-- <link rel="stylesheet" href="./styles.css"> -->
-
+    <link rel="stylesheet" href="./timeline.css">
     <link rel="shortcut icon" type="image/png" href="PedwayFlavicon.png">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EM934VK7RC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-EM934VK7RC');
+    </script>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EM934VK7RC"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
+<body>
+    <object type="text/html" width=100% height="50" data="header.html"></object>
+    <div class="topnav">
+        <a href="index.html">Full Pedway Map</a>
+        <a href="3dMap.html">3D Map</a>
+        <a href="extras.html"> Extras</a>
+        <a href="timeline.html" class="active"> Historical Maps</a>
+        <a href="contact.html"> Feedback</a>
+    </div>
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+    <main class="pw" id="timeline" aria-roledescription="carousel" aria-label="Historical Pedway maps">
 
-    gtag('config', 'G-EM934VK7RC');
-</script>
 
-<body scrolling=no>
-    <div class="carousel-container">
 
-        <object type="text/html" width=100% height="50" data="header.html"></object>
-        <div class="topnav">
-            <!-- <link rel="stylesheet" href="./styles.css"> -->
+        <!-- Route line: one station per map, built from the cards by timeline.js -->
+        <nav class="pw-route" aria-label="Jump to a year">
+            <ol class="pw-route__stops" data-pw-stops></ol>
+        </nav>
 
-            <a href="index.html">Full Pedway Map</a>
-            <a href="3dMap.html" class="">3D Map</a>
-            <a href="extras.html"> Extras</a>
-            <a href="timeline.html" class="active"> Historical Maps</a>
-            <a href="contact.html"> Feedback</a>
+        <!-- Cards -->
+        <div class="pw-viewport">
+            <div class="pw-track" data-pw-track tabindex="0" aria-label="Maps, use left and right arrow keys">
 
-        </div>
-        <!-- partial:index.partial.html -->
-        <!--Timeline carousel-->
-        <section class="timeline-carousel">
-            <h1>Historical Pedway Maps</h1>
-            <div class="timeline-carousel__item-wrapper" data-js="timeline-carousel">
-
-                <!--Timeline item-->
-                <div class="timeline-carousel__item">
-                    <div class="timeline-carousel__image">
-                        <div style="max-height:400px; overflow: hidden">
-                            <img src="Pictures\Timeline\1979Thumb.jpg" alt="">
-                        </div>
-                        <!-- <div class="media-wrapper media-wrapper--overlay" style="background: url('https://www.historyonthenet.com/wp-content/uploads/2016/12/135151-004-0D4D550E.jpg') center center; background-size:cover;"></div> -->
+                <article class="pw-card" id="map-1979" data-year="1979" aria-roledescription="slide">
+                    <button class="pw-card__frame" type="button" aria-label="Enlarge the 1979 map">
+                        <img src="Pictures/Timeline/1979Thumb.jpg" alt="1979 city Pedway planning map" decoding="async">
+                        <span class="pw-card__zoom" aria-hidden="true">Tap to enlarge</span>
+                    </button>
+                    <div class="pw-card__body">
+                        <span class="pw-card__year">1979</span>
+                        <h2 class="pw-card__title">Official City Pedway Planning Document</h2>
+                        <a href="PedwayMap1979.html" class="pw-card__link" target="_blank" rel="noopener">Full Sized Map</a>
                     </div>
-                    <div class="timeline-carousel__item-inner">
-                        <span class="year">1979</span>
-                        <p>Offical City Pedway Planning Document</p>
-                        <a href="PedwayMap1979.html" class="read-more" target="_blank">Full Sized Map</a>
+                </article>
 
+                <article class="pw-card" id="map-1990s" data-year="1990s" aria-roledescription="slide">
+                    <button class="pw-card__frame" type="button" aria-label="Enlarge the 1990s map">
+                        <img src="Pictures/Timeline/PedwayMap1990.jpg" alt="1990s official city Pedway map" decoding="async">
+                        <span class="pw-card__zoom" aria-hidden="true">Tap to enlarge</span>
+                    </button>
+                    <div class="pw-card__body">
+                        <span class="pw-card__year">1990s</span>
+                        <h2 class="pw-card__title">Official City Pedway Map Updated &ndash; Version Date Unknown</h2>
+                        <a href="http://www.neweastside.org/PedwayPictures.html" class="pw-card__link" target="_blank" rel="noopener">Learn More</a>
                     </div>
-                </div>
-                <!--/Timeline item-->
+                </article>
 
-                <!--Timeline item-->
-                <div class="timeline-carousel__item">
-                    <div class="timeline-carousel__image">
-                        <div style="max-height:400px; overflow: hidden">
-                            <img src="Pictures\Timeline\PedwayMap1990.jpg" alt="">
-                        </div>
-                        <!-- <div class="media-wrapper media-wrapper--overlay" style="background: url('https://www.historyonthenet.com/wp-content/uploads/2016/12/135151-004-0D4D550E.jpg') center center; background-size:cover;"></div> -->
+                <article class="pw-card" id="map-2001-plan" data-year="2001" aria-roledescription="slide">
+                    <button class="pw-card__frame" type="button" aria-label="Enlarge the 2001 Lakeshore East draft plan">
+                        <img src="Pictures/Timeline/2001Plan.jpg" alt="2001 draft plan for the Lakeshore East Pedway" loading="lazy" decoding="async">
+                        <span class="pw-card__zoom" aria-hidden="true">Tap to enlarge</span>
+                    </button>
+                    <div class="pw-card__body">
+                        <span class="pw-card__year">2001</span>
+                        <h2 class="pw-card__title">2001 Draft Plan &ndash; Lakeshore East</h2>
+                        <a href="http://www.neweastside.org/Pedway6.html" class="pw-card__link" target="_blank" rel="noopener">Learn More</a>
                     </div>
-                    <div class="timeline-carousel__item-inner">
-                        <span class="year">1990s</span>
-                        <p>Offical City Pedway Map Updated - Version Date Unknown</p>
-                        <a href="http://www.neweastside.org/PedwayPictures.html" class="read-more" target="_blank">Learn More</a>
+                </article>
 
+                <article class="pw-card" id="map-2001-spiegl" data-year="2001" aria-roledescription="slide">
+                    <button class="pw-card__frame" type="button" aria-label="Enlarge the 2001 map by Mark Spiegl">
+                        <img src="Pictures/Timeline/2001PedwayMap.jpg" alt="2001 Pedway map designed by Mark Spiegl" loading="lazy" decoding="async">
+                        <span class="pw-card__zoom" aria-hidden="true">Tap to enlarge</span>
+                    </button>
+                    <div class="pw-card__body">
+                        <span class="pw-card__year">2001</span>
+                        <h2 class="pw-card__title">Pedway Map &ndash; Designed by Mark Spiegl</h2>
+                        <a href="https://www.spiegl.org/pedway/pedway.html" class="pw-card__link" target="_blank" rel="noopener">Learn More</a>
                     </div>
-                </div>
-                <!--/Timeline item-->
+                </article>
 
-                <!--Timeline item-->
-                <div class="timeline-carousel__item">
-                    <div class="timeline-carousel__image">
-                        <div style="max-height:500px; overflow: hidden">
-                            <img src="Pictures\Timeline\2001Plan.jpg" alt="">
-                        </div>
-
-                        <!-- <div class="media-wrapper media-wrapper--overlay" style="background: url('http://factsforkids.net/wp-content/uploads/2013/09/13.jpg') center center; background-size:cover;"></div> -->
+                <article class="pw-card" id="map-2008" data-year="2008" aria-roledescription="slide">
+                    <button class="pw-card__frame" type="button" aria-label="Enlarge the 2008 map">
+                        <img src="Pictures/Timeline/PedwayMap2008.jpg" alt="2008 official city Pedway map" loading="lazy" decoding="async">
+                        <span class="pw-card__zoom" aria-hidden="true">Tap to enlarge</span>
+                    </button>
+                    <div class="pw-card__body">
+                        <span class="pw-card__year">2008</span>
+                        <h2 class="pw-card__title">Official City Pedway Map Updated &ndash; Block 37 Construction</h2>
+                        <a href="https://www.chicago.gov/content/dam/city/depts/cdot/Pedwaymap_2008.pdf" class="pw-card__link" target="_blank" rel="noopener">Full Sized Map</a>
                     </div>
-                    <div class="timeline-carousel__item-inner">
-                        <span class="year">2001</span>
-                        <p>2001 Draft Plan - Lakeshore East</p>
-                        <a href="http://www.neweastside.org/Pedway6.html" class="read-more" target="_blank">Learn More</a>
+                </article>
+
+                <article class="pw-card" id="map-2010" data-year="2010" aria-roledescription="slide">
+                    <button class="pw-card__frame" type="button" aria-label="Enlarge the 2010 Chicago In Maps map">
+                        <img src="Pictures/Timeline/ChicagoInMaps-PedwayMap.jpg" alt="2010 Chicago In Maps Pedway map by Dennis McClendon" loading="lazy" decoding="async">
+                        <span class="pw-card__zoom" aria-hidden="true">Tap to enlarge</span>
+                    </button>
+                    <div class="pw-card__body">
+                        <span class="pw-card__year">2010</span>
+                        <h2 class="pw-card__title">Chicago In Maps &ndash; Designed by Dennis McClendon</h2>
+                        <a href="https://chicagoinmaps.com/pedwaymap.html" class="pw-card__link" target="_blank" rel="noopener">Learn More</a>
                     </div>
-                </div>
-                <!--/Timeline item-->
+                </article>
 
-                <!--Timeline item-->
-                <div class="timeline-carousel__item">
-                    <div class="timeline-carousel__image">
-                        <div style="max-height:500px; overflow: hidden">
-                            <img src="Pictures\Timeline\2001PedwayMap.jpg" alt="">
-                        </div>
+                <article class="pw-card" id="map-2011" data-year="2011" aria-roledescription="slide">
+                    <button class="pw-card__frame" type="button" aria-label="Enlarge the 2011 map">
+                        <img src="Pictures/Timeline/PEDWAY-2011b.jpg" alt="2011 official city Pedway map" loading="lazy" decoding="async">
+                        <span class="pw-card__zoom" aria-hidden="true">Tap to enlarge</span>
+                    </button>
+                    <div class="pw-card__body">
+                        <span class="pw-card__year">2011</span>
+                        <h2 class="pw-card__title">Official City Pedway Map Updated &ndash; Lake Shore East Extension</h2>
+                        <a href="http://www.neweastside.org/Pedway-Swissotel.html" class="pw-card__link" target="_blank" rel="noopener">Learn More</a>
                     </div>
-                    <div class="timeline-carousel__item-inner">
-                        <span class="year">2001</span>
-                        <p>Pedway Map - Designed by: Mark Spiegl</p>
-                        <a href="https://www.spiegl.org/pedway/pedway.html" class="read-more" target="_blank">Learn More</a>
+                </article>
+
+                <article class="pw-card" id="map-2013" data-year="2013" aria-roledescription="slide">
+                    <button class="pw-card__frame" type="button" aria-label="Enlarge the 2013 map">
+                        <img src="Pictures/Timeline/PedwayMap2013-S.png" alt="2013 official city Pedway map" loading="lazy" decoding="async">
+                        <span class="pw-card__zoom" aria-hidden="true">Tap to enlarge</span>
+                    </button>
+                    <div class="pw-card__body">
+                        <span class="pw-card__year">2013</span>
+                        <h2 class="pw-card__title">Official City Pedway Map Updated</h2>
+                        <a href="https://www.chicago.gov/content/dam/city/depts/cdot/pedestrian/Pedway/PedwayMap2013.pdf" class="pw-card__link" target="_blank" rel="noopener">City PDF (2013)</a>
                     </div>
-                </div>
-                <!--/Timeline item-->
+                </article>
 
-                <!--Timeline item-->
-                <div class="timeline-carousel__item">
-                    <div class="timeline-carousel__image">
-                        <div style="max-height:500px; overflow: hidden">
-                            <img src="Pictures\Timeline\PedwayMap2008.jpg" alt="">
-                        </div>
+                <article class="pw-card" id="map-2017" data-year="2017" aria-roledescription="slide">
+                    <button class="pw-card__frame" type="button" aria-label="Enlarge the 2017 map">
+                        <img src="Pictures/Timeline/2017Pedway.png" alt="2017 Pedway map project by sbamberger" loading="lazy" decoding="async">
+                        <span class="pw-card__zoom" aria-hidden="true">Tap to enlarge</span>
+                    </button>
+                    <div class="pw-card__body">
+                        <span class="pw-card__year">2017</span>
+                        <h2 class="pw-card__title">Abandoned Pedway Map Project &ndash; Designed by sbamberger</h2>
+                        <a href="https://chicagopedwaymap.weebly.com/" class="pw-card__link" target="_blank" rel="noopener">Learn More</a>
                     </div>
-                    <div class="timeline-carousel__item-inner">
-                        <span class="year">2008</span>
-                        <p>Offical City Pedway Map Updated - Block 37 Construction</p>
-                        <a href="https://www.chicago.gov/content/dam/city/depts/cdot/Pedwaymap_2008.pdf" class="read-more" target="_blank">Full Sized Map</a>
+                </article>
+
+                <article class="pw-card" id="map-2024" data-year="2024" aria-roledescription="slide">
+                    <button class="pw-card__frame" type="button" aria-label="Enlarge the 2024 ChicagoPedwayMap.com map">
+                        <img src="Pictures/ChicagoUnionStation.png" alt="ChicagoPedwayMap.com map, first full version" loading="lazy" decoding="async">
+                        <span class="pw-card__zoom" aria-hidden="true">Tap to enlarge</span>
+                    </button>
+                    <div class="pw-card__body">
+                        <span class="pw-card__year">2024</span>
+                        <h2 class="pw-card__title">First Full Version of my Pedway Map Published</h2>
+                        <a href="index.html" class="pw-card__link">ChicagoPedwayMap.com</a>
                     </div>
-                </div>
-                <!--/Timeline item-->
+                </article>
 
-                <!--Timeline item-->
-                <div class="timeline-carousel__item">
-                    <div class="timeline-carousel__image">
-                        <div style="max-height:500px; overflow: hidden">
-                            <img src="Pictures\Timeline\ChicagoInMaps-PedwayMap.jpg" alt="">
-                        </div>
+                <article class="pw-card" id="map-2025" data-year="2025" aria-roledescription="slide">
+                    <button class="pw-card__frame" type="button" aria-label="Enlarge the 2025 map">
+                        <img src="Pictures/2025.jpg" alt="May 2025 official city Pedway system map" loading="lazy" decoding="async">
+                        <span class="pw-card__zoom" aria-hidden="true">Tap to enlarge</span>
+                    </button>
+                    <div class="pw-card__body">
+                        <span class="pw-card__year">2025</span>
+                        <h2 class="pw-card__title">Official City Pedway Map Updated &ndash; Current Official City Map</h2>
+                        <a href="https://www.chicago.gov/content/dam/city/depts/cdot/pedestrian/Pedway/Pedway%20System%20Map_May%202025.pdf" class="pw-card__link" target="_blank" rel="noopener">City PDF (May 2025)</a>
                     </div>
-                    <div class="timeline-carousel__item-inner">
-                        <span class="year">2010</span>
-                        <p>Chicago In Maps - Designed By: Dennis McClendon</p>
-                        <a href="https://chicagoinmaps.com/pedwaymap.html" class="read-more" target="_blank">Learn More</a>
+                </article>
+
+                <!-- OpenStreetMap is a living document: timeline.js fills in the current year -->
+                <article class="pw-card" id="map-osm" data-year="Today" data-pw-current-year aria-roledescription="slide">
+                    <button class="pw-card__frame" type="button" aria-label="Enlarge the OpenStreetMap Pedway view">
+                        <img src="Pictures/Timeline/OpenStreetMap2024.png" alt="The Pedway as mapped on OpenStreetMap" loading="lazy" decoding="async">
+                        <span class="pw-card__zoom" aria-hidden="true">Tap to enlarge</span>
+                    </button>
+                    <div class="pw-card__body">
+                        <span class="pw-card__year">Today</span>
+                        <h2 class="pw-card__title">OpenStreetMap &ndash; A Living Document</h2>
+                        <a href="https://www.openstreetmap.org/relation/3157242#map=17/41.88440/-87.62573" class="pw-card__link" target="_blank" rel="noopener">OpenStreetMap.org</a>
                     </div>
-                </div>
-                <!--/Timeline item-->
+                </article>
 
-                <!--Timeline item-->
-                <div class="timeline-carousel__item">
-                    <div class="timeline-carousel__image">
-                        <div style="max-height:500px; overflow: hidden">
-                            <img src="Pictures\Timeline\PEDWAY-2011b.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="timeline-carousel__item-inner">
-                        <span class="year">2011</span>
-                        <p>Offical City Pedway Map Updated - Lake Shore East Extension</p>
-                        <a href="http://www.neweastside.org/Pedway-Swissotel.html" class="read-more" target="_blank">Learn More</a>
-                    </div>
-                </div>
-                <!--/Timeline item-->
-
-                <!--Timeline item-->
-                <div class="timeline-carousel__item">
-                    <div class="timeline-carousel__image">
-                        <div style="max-height:500px; overflow: hidden">
-                            <img src="Pictures\Timeline\PedwayMap2013-S.png" width: 400px, height: auto alt="">
-                        </div>
-                    </div>
-                    <div class="timeline-carousel__item-inner">
-                        <span class="year">2013</span>
-                        <p>Offical City Pedway Map Updated - Current Official City Map</p>
-                        <a href="https://www.chicago.gov/content/dam/city/depts/cdot/pedestrian/Pedway/PedwayMap2013.pdf" class="read-more" target="_blank">www.chicago.gov/.../PedwayMap2013.pdf</a>
-                    </div>
-                </div>
-                <!--/Timeline item-->
-
-                <!--Timeline item-->
-                <div class="timeline-carousel__item">
-                    <div class="timeline-carousel__image">
-                        <div style="max-height:500px; overflow: hidden">
-                            <img src="Pictures\Timeline\2017Pedway.png" width: 400px, height: auto alt="">
-                        </div>
-                    </div>
-                    <div class="timeline-carousel__item-inner">
-                        <span class="year">2017</span>
-                        <p>Abandoned Pedway Map Project - Designed By: sbamberger</p>
-                        <a href="https://chicagopedwaymap.weebly.com/" class="read-more" target="_blank">Learn More</a>
-                    </div>
-                </div>
-                <!--/Timeline item-->
-
-                <!--Timeline item-->
-                <div class="timeline-carousel__item">
-                    <div class="timeline-carousel__image">
-                        <div style="max-height:500px; overflow: hidden">
-                            <img src="Pictures\ChicagoUnionStation.png" width: 400px, height: 600 alt="">
-                        </div>
-                    </div>
-                    <div class="timeline-carousel__item-inner">
-                        <span class="year">2024</span>
-                        <p>First Full Version of my Pedway Map Published</p>
-                        <a href="https://www.chicagopedwaymap.com" class="read-more" target="_blank">ChicagoPedwayMap.com</a>
-                    </div>
-                </div>
-                <!--/Timeline item-->
-
-                <!--Timeline item-->
-                <div class="timeline-carousel__item">
-                    <div class="timeline-carousel__image">
-                        <div style="max-height:500px; overflow: hidden">
-                            <img src="Pictures\2025.jpg" width: 400px, height: 600 alt="">
-                        </div>
-                    </div>
-                    <div class="timeline-carousel__item-inner">
-                        <span class="year">2025</span>
-                        <p>Official City Pedway Map Updated</p>
-                        <a href="https://www.chicago.gov/content/dam/city/depts/cdot/pedestrian/Pedway/Pedway%20System%20Map_May%202025.pdf" class="read-more" target="_blank">www.chicago.gov/.../202025.pdf</a>
-                    </div>
-                </div>
-                <!--/Timeline item-->
-
-                <!--Timeline item-->
-                <div class="timeline-carousel__item">
-                    <div class="timeline-carousel__image">
-                        <div style="max-height:500px; overflow: hidden">
-                            <img src="Pictures\Timeline\OpenStreetMap2024.png" width: 400px, height: auto alt="">
-                        </div>
-                    </div>
-                    <div class="timeline-carousel__item-inner">
-                        <span class="year" id="currentYear">Living Document</span>
-                        <p>Open Street Map</p>
-                        <a href="https://www.openstreetmap.org/relation/3157242#map=17/41.88440/-87.62573" class="read-more" target="_blank">OpenStreetMap.org</a>
-                    </div>
-                </div>
-                <!--/Timeline item-->
-
-
-
-
-
-
-
-                <!-- partial -->
-                <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-                <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js'></script>
-                <script src="./script.js"></script>
-
-
-
-                <!-- Auto Updates the Open Street Map Year to the current year as it is a living document-->
-                <script>
-                    // Creating Date Object  
-                    var dateobj = new Date();
-
-                    // Year from above object  
-                    // is being fetched using getFullYear()  
-                    var dateObject = dateobj.getFullYear();
-
-                    // Printing current year  
-                    document.getElementById("currentYear").innerHTML =
-                        "" + dateObject;
-                </script>
             </div>
+        </div>
 
+        <!-- Controls -->
+        <div class="pw-controls">
+            <button class="pw-btn" type="button" data-pw-prev aria-label="Earlier map">
+                <span aria-hidden="true">&larr;</span><span class="pw-btn__label">Earlier</span>
+            </button>
+            <p class="pw-counter" aria-live="polite"><span data-pw-index>1</span> <span class="pw-counter__of">of</span> <span data-pw-total>12</span></p>
+            <button class="pw-btn" type="button" data-pw-next aria-label="Later map">
+                <span class="pw-btn__label">Later</span><span aria-hidden="true">&rarr;</span>
+            </button>
+        </div>
+        <p class="pw-hint">Swipe, use the arrow keys, or tap a year on the line above.</p>
+    </main>
+
+    <!-- Full-size viewer -->
+    <dialog class="pw-viewer" data-pw-viewer aria-label="Map viewer">
+        <div class="pw-viewer__bar">
+            <span class="pw-viewer__title" data-pw-viewer-title></span>
+            <button class="pw-viewer__close" type="button" data-pw-viewer-close aria-label="Close viewer">&times;</button>
+        </div>
+        <div class="pw-viewer__stage" data-pw-viewer-stage>
+            <img data-pw-viewer-img alt="">
+        </div>
+        <p class="pw-viewer__hint">Tap the map to zoom in or out. Press Esc to close.</p>
+    </dialog>
+
+    <script src="./timeline.js"></script>
+
+    <footer>
+        ChicagoPedwayMap <span data-pw-footer-year>2026</span>
+        <span class="links"><a href="contact.html">Contact Me</a></span>
+    </footer>
 </body>
-<footer>
-    ChicagoPedwayMap 2026
-    <span class="links">
-  <a href="contact.html">Contact Me</a>
-</div>
-</footer>
 
 </html>
