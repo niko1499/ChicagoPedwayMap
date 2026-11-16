@@ -51,14 +51,72 @@
             ]
         }
         </script>
+    <link rel="stylesheet" href="./pdfviewer/pedway-pdf-viewer.css">
     <style>
-        /* Hide all divs by default */
-        
-        .chrome,
-        .firefox,
-        .edge,
-        .other {
+        .map-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 14px;
+            padding: 8px 16px;
+            background: #1d1d1e;
+            color: #fff;
+            font-family: "Roboto", sans-serif;
+            font-size: 15px;
+        }
+
+        .map-bar[hidden],
+        .map-frame[hidden],
+        .map-themed[hidden] {
             display: none;
+        }
+
+        .map-bar__note {
+            margin: 0;
+            padding: 6px 12px;
+            border-left: 5px solid #FFE385;
+            border-radius: 4px;
+            background: #302665;
+            text-align: left;
+            line-height: 1.4;
+        }
+
+        .map-bar__note a {
+            color: #FFE385;
+        }
+
+        .map-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 40px;
+            padding: 8px 16px;
+            border: 2px solid #FFE385;
+            border-radius: 999px;
+            background: #302665;
+            color: #fff;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .map-toggle:hover {
+            background: #FFE385;
+            color: #302665;
+        }
+
+        .map-frame,
+        .map-themed {
+            --ppv-height: min(85vh, 1111px);
+            height: min(85vh, 1111px);
+        }
+
+        .map-frame iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
@@ -92,22 +150,86 @@
     </div>
 
 
-    <div class="chrome">
-        <!-- Version WITH toolbar -->
-        <div style="height: 1111px;">
-            <iframe src="PedwayMap.pdf#toolbar=1" onload="" style="height: 1111px; width: 100%; border: none; overflow: hidden;">
+    <!-- Main map. Desktop Chrome: Chrome's built-in PDF viewer (fastest for this map), with a toggle
+         to the themed viewer. Other browsers: the themed viewer (pdfviewer/) with a note about Chrome.
+         The note / toggle bar sits below the map. -->
+    <div class="map-frame" id="map-frame" hidden>
+        <iframe title="Chicago Pedway Map (PDF)"></iframe>
+    </div>
+    <div class="map-themed" id="map-themed" hidden></div>
+    <div class="map-bar" id="map-bar" hidden>
+        <p class="map-bar__note" id="map-note" hidden>
+            This map is very detailed. For the fastest zooming, open this page in Google Chrome, whose built-in PDF viewer renders it more quickly, or
+            <a href="PedwayMap.pdf" download="PedwayMap_2024_NXG.pdf">download the PDF</a>.
+        </p>
+        <button class="map-toggle" id="map-toggle" type="button" hidden></button>
+    </div>
+    <noscript>
+        <p style="color:#fff; padding: 16px;">The map viewer needs JavaScript. <a style="color:#FFE385" href="PedwayMap.pdf">Open the PDF directly</a>.</p>
+    </noscript>
 
-        </iframe>
-        </div>
-    </div>
-    <div class="firefox">
-        <p style="color:rgb(255, 255, 255);" style="font-size: 200px;">Firefox PDF rendering results in pixelation.</p>
-        <p style="color:rgb(255, 255, 255);" style="font-size: 36;">Try downloading it instead and using a local PDF viewing software or Chrome.</p>
-    </div>
-    <div class="edge">
-        <p style="color:rgb(255, 255, 255);" style="font-size: 200px;">Edge PDF rendering results in pixelation.</p>
-        <p style="color:rgb(255, 255, 255);" style="font-size: 36;">Try downloading it instead and using a local PDF viewing software or Chrome.</p>
-    </div>
+    <script type="module">
+        import { mountPdfViewer } from './pdfviewer/pedway-pdf-viewer.js';
+
+        // Desktop Google Chrome only: Edge, Opera, Brave etc. also contain "Chrome" in the
+        // user agent, and mobile Chrome can't show PDFs inside a page.
+        const ua = navigator.userAgent;
+        const brands = (navigator.userAgentData && navigator.userAgentData.brands || []).map(b => b.brand);
+        const mobile = navigator.userAgentData ? navigator.userAgentData.mobile : /Android|Mobi|iPhone|iPad/i.test(ua);
+        const isChrome = !mobile && (brands.length ?
+            brands.includes('Google Chrome') :
+            /Chrome\//.test(ua) && !/Edg\/|OPR\/|SamsungBrowser|YaBrowser|Vivaldi/.test(ua));
+
+        const bar = document.getElementById('map-bar');
+        const note = document.getElementById('map-note');
+        const toggle = document.getElementById('map-toggle');
+        const frameWrap = document.getElementById('map-frame');
+        const frame = frameWrap.querySelector('iframe');
+        const themed = document.getElementById('map-themed');
+        const KEY = 'pedwayMapViewer';
+        let mounted = false;
+
+        function show(mode) {
+            const useChrome = mode === 'chrome';
+            frameWrap.hidden = !useChrome;
+            themed.hidden = useChrome;
+            if (useChrome && !frame.src) frame.src = 'PedwayMap.pdf#toolbar=1';
+            if (!useChrome && !mounted) {
+                mounted = true;
+                mountPdfViewer(themed, {
+                    src: 'PedwayMap.pdf',
+                    layout: 'floating',
+                    title: 'Chicago Pedway Map',
+                    downloadName: 'PedwayMap_2024_NXG.pdf'
+                });
+            }
+            toggle.textContent = useChrome ? 'Switch to the themed map viewer' : 'Switch to Chrome’s PDF viewer';
+        }
+
+        if (isChrome) {
+            let mode = 'chrome';
+            try { if (localStorage.getItem(KEY) === 'themed') mode = 'themed'; } catch (e) {}
+            bar.hidden = false;
+            toggle.hidden = false;
+            toggle.addEventListener('click', () => {
+                mode = mode === 'chrome' ? 'themed' : 'chrome';
+                try { localStorage.setItem(KEY, mode); } catch (e) {}
+                show(mode);
+            });
+            show(mode);
+        } else {
+            show('themed');
+            if (!mobile) {
+                bar.hidden = false;
+                note.hidden = false;
+                // Not in Chrome: the button points people to Chrome instead.
+                toggle.hidden = false;
+                toggle.addEventListener('click', () => {
+                    window.open('https://www.google.com/chrome/', '_blank', 'noopener');
+                });
+            }
+        }
+    </script>
     <h1 style="color:rgb(255, 255, 255); text-align:center; font-size:40px; margin-top:16px;">Chicago Pedway Map — Detailed Map of Downtown Pedestrian Tunnels</h1>
 
     <p style="color:rgb(255, 255, 255);padding-left: 20%;padding-right: 20%;padding-top: 10px;padding-bottom: 10px; font-size: 36;">Mysterious underground paths sprawl out to touch over 35 square blocks of the Chicago Central Business District. Some entrances at major train stations are obvious, others subtly announce themselves with the rune like blue and gold compass rose, and
@@ -128,66 +250,11 @@
         <button class="btn" style="width:100%;height: 206px;"><i class="fa fa-download"></i> Download PedwayMap.pdf</button>
     </a>
 
-    <script>
-        // Detect the user's browser using the userAgent string
-        const userAgent = navigator.userAgent.toLowerCase();
 
-        // Check for Chrome, Firefox, and Edge
-        if (userAgent.indexOf('chrome') > -1 && userAgent.indexOf('edg') === -1 && userAgent.indexOf('opr') === -1) {
-            // Chrome (make sure it's not Edge or Opera)
-            document.querySelector('.chrome').style.display = 'block';
-        } else if (userAgent.indexOf('firefox') > -1) {
-            // Firefox
-            document.querySelector('.firefox').style.display = 'block';
-        } else if (userAgent.indexOf('edg') > -1) {
-            // Edge
-            document.querySelector('.edge').style.display = 'block';
-        } else {
-            // Other browsers
-            document.querySelector('.other').style.display = 'block';
-        }
-    </script>
-
-</body>
-
-</html>
-
-
-
-<canvas id="pdfCanvas"></canvas>
-
-<script>
-    const url = 'https://chicagopedwaymap.com/PedwayMap.pdf'; // PDF URL
-
-    // The PDF.js library will render the PDF into this canvas
-    const canvas = document.getElementById('pdfCanvas');
-    const context = canvas.getContext('2d');
-
-    // Fetch the PDF
-    pdfjsLib.getDocument(url).promise.then(pdf => {
-        pdf.getPage(1).then(page => {
-            const viewport = page.getViewport({
-                scale: 1
-            });
-            canvas.height = viewport.height;
-            canvas.width = viewport.width;
-
-            page.render({
-                canvasContext: context,
-                viewport: viewport
-            });
-        });
-    });
-</script>
-
-
-
-<link href="styles.css" rel="stylesheet">
-<footer>
-    ChicagoPedwayMap 2026
-    <span class="links">
-      <a href="contact.html">Contact Me</a>
-    </div>
+    <footer>
+        ChicagoPedwayMap 2026
+        <span class="links"><a href="contact.html">Contact Me</a></span>
     </footer>
 </body>
+
 </html>
