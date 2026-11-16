@@ -1,0 +1,13 @@
+var HS = {};
+HS.iJS = function (filepath, test)
+{
+// Only include this js if the test isn't present, or it doesn't exist
+if (!test || !(test in window)) {
+document.write("<script type='text/javascript' src='" + filepath + "'></scr" + "ipt>");
+}
+};
+HS.iJS("https://web4.realtracker.com/netpoll/js/ibc90006.js");
+HS.iJS("//t8.prnx.net/js/tc.js"); 
+HS.iJS("/~site/javascript/prnx_track.js");
+HS.iJS("/~site/javascript/jQuery-1.6.3.min.js", "jQuery");
+HS.iJS("/~site/javascript/jquery.cookie.min.js");
